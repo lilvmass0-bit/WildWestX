@@ -1,0 +1,3085 @@
+--discord.gg/boronide, code generated using luamin.js™
+
+
+
+
+local v0 = cloneref or function(v46)
+	return v46;
+end ;
+plrs = v0(game:GetService("Players"));
+lp = plrs.LocalPlayer;
+ws = v0(game:GetService("Workspace"));
+cam = ws.Camera;
+ms = lp:GetMouse();
+repst = v0(game:GetService("ReplicatedStorage"));
+stats = v0(game:GetService("Stats"));
+mps = v0(game:GetService("MarketplaceService"));
+vim = v0(game:GetService("VirtualInputManager"));
+scriptcontext = v0(game:GetService("ScriptContext"));
+rs = v0(game:GetService("RunService"));
+uis = v0(game:GetService("UserInputService"));
+cg = v0(game:GetService("CoreGui"));
+local v3 = getgenv or function()
+	return _G;
+end ;
+task.spawn(function()
+	local v47 = 0 - 0 ;
+	while true do
+		if (v47 == (1074 - (877 + 196))) then
+			if (v3().FOV and v3().FOV.Visible) then
+				v3().FOV.Visible = false;
+			end
+			break;
+		end
+		if (v47 == 0) then
+			if v3().conn then
+				for v1092, v1093 in next, v3().conn do
+					local v1094 = 0 + 0 ;
+					while true do
+						if (0 == v1094) then
+							v1093:Disconnect();
+							v3().conn[v1092] = nil;
+							break;
+						end
+					end
+				end
+			end
+			if (v3().Toggles and (type(v3().Toggles) == "table")) then
+				for v1095, v1096 in next, v3().Toggles do
+					local v1097 = 169 - (28 + 141) ;
+					while true do
+						if (v1097 == (0 + 0)) then
+							v3().Toggles[v1095]:SetValue(false);
+							v3().Toggles[v1095] = nil;
+							break;
+						end
+					end
+				end
+			end
+			v47 = 1;
+		end
+	end
+end);
+conn, utility, utils = {}, {}, {};
+local v4 = function(v48)
+	v48();
+end;
+if (game.GameId ~= 807930589) then
+	return lp:Kick("Invalid Game:\nPlease Join The Wild West");
+end
+if  not (v3().FOV and v3().snap) then
+	local v361 = 0 - 0 ;
+	while true do
+		if (v361 == (2 + 0)) then
+			v3().snap.Visible = false;
+			v3().snap.ZIndex = 999;
+			v361 = 1320 - (486 + 831) ;
+		end
+		if (v361 == 1) then
+			v3().FOV.Color = Color3.fromRGB(0 - 0 , 897 - 642 , 194);
+			v3().snap = (Drawing and Drawing.new("Line")) or {} ;
+			v361 = 1 + 1 ;
+		end
+		if (v361 == (9 - 6)) then
+			v3().snap.Color = Color3.fromRGB(1263 - (668 + 595) , 255, 175 + 19 );
+			v3().snap.Thickness = 1;
+			break;
+		end
+		if (v361 == (0 + 0)) then
+			v3().FOV = (Drawing and Drawing.new("Circle")) or {} ;
+			v3().FOV.Visible, v3().FOV.Radius, v3().FOV.Filled = false, 545 - 345 , false;
+			v361 = 1;
+		end
+	end
+end
+v4(function()
+	mainModule = repst:FindFirstChild("Global", true);
+	getgc = getgc or function()
+		return {};
+	end ;
+	debug = debug or {} ;
+	hookfunction = hookfunction or function(...)
+		return ...;
+	end ;
+	newcclosure = newcclosure or function(...)
+		return ...;
+	end ;
+	getscripthash = getscripthash or function(...)
+		return ...;
+	end ;
+	messagebox = messagebox or function(...)
+		return ...;
+	end ;
+	getconnections = getconnections or function()
+		return {};
+	end ;
+	getsenv = getsenv or function(...)
+		return ...;
+	end ;
+	Settings = {};
+	flags = {};
+	task.spawn(function()
+		repeat
+			local v656 = 290 - (23 + 267) ;
+			while true do
+				if (v656 == 0) then
+					task.wait();
+					if (mainModule and (mainModule.ClassName == "ModuleScript") and lib) then
+						local v1170 = 1944 - (1129 + 815) ;
+						local v1171;
+						local v1172;
+						while true do
+							if (v1170 == (388 - (371 + 16))) then
+								mainModule = v1172;
+								loadModule = mainModule.LoadModule;
+								v1170 = 2;
+							end
+							if (v1170 == (1750 - (1326 + 424))) then
+								v1171, v1172 = pcall(require, mainModule);
+								if  not v1171 then
+									return lib:Notify("[Script Warning] Executor doesn't support [require]", 18 - 8 , nil);
+								end
+								v1170 = 1;
+							end
+							if (v1170 == 2) then
+								if (loadModule and (type(loadModule) == "function")) then
+									Modules = {
+										Network = loadModule("Network"),
+										cam = loadModule("Camera"),
+										animhandler = loadModule("AnimationHandler"),
+										leaderboard = loadModule("Leaderboard"),
+										animal = loadModule("Animal"),
+										horse = loadModule("Horse"),
+										gunitem = loadModule("GunItemType"),
+										projHandler = loadModule("ProjectileHandler"),
+										plrCharacter = loadModule("PlayerCharacter"),
+										meeleType = loadModule("MeleeItemType"),
+										pickaxeType = loadModule("PickaxeItemType"),
+										repChar = loadModule("RepCharHandler"),
+										swimController = loadModule("SwimController"),
+										sharedRadgolls = loadModule("SharedRagdolls"),
+										plrData = loadModule("PlayerData"),
+										repState = loadModule("ReplicatedState"),
+										hotBar = loadModule("Hotbar")
+									};
+								end
+								break;
+							end
+						end
+					end
+					break;
+				end
+			end
+		until lib
+	end);
+	task.spawn(function()
+		local v362 = 0;
+		repeat
+			local v657 = 0;
+			while true do
+				if (v657 == (0 - 0)) then
+					task.wait();
+					v362 += 1
+					v657 = 119 - (88 + 30) ;
+				end
+				if (v657 == 1) then
+					if ( not Network and Modules and Modules.Network) then
+						Network = Modules.Network;
+					end
+					break;
+				end
+			end
+		until (mainModule and Modules and Modules.Network) or (v362 >= (1771 - (720 + 51)))
+		repeat
+			task.wait();
+		until lib
+		if ( not (Network and Modules and Modules.Network) and lib) then
+			lib:Notify("[Script Warning] Failed to load network module some features won't work", 111 - 61 , UDim2.new(1776 - (421 + 1355) , 1154 - 454 , 0 + 0 , 1123 - (286 + 797) ));
+		end
+	end);
+	for v363, v364 in next, getconnections(scriptcontext.Error) do
+		v364:Disconnect();
+	end
+	logsev = v0(game:GetService("LogService"));
+	for v365, v366 in next, getconnections(logsev.MessageOut) do
+		v366:Disconnect();
+	end
+	lighting = v0(game:GetService("Lighting"));
+	for v367, v368 in next, getconnections(lighting.Changed) do
+		v368:Disconnect();
+	end
+	conn['curcam'] = ws:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
+		cam = ws.CurrentCamera;
+	end);
+end);
+local v5 = {};
+v4(function()
+	function SendReport(v370)
+		local v371 = (http and http.request) or http_request or request ;
+		local v372 = v0(game:GetService("HttpService"));
+		local v373 = "**Report Sent From:"   .. " "   .. lp.Name   .. " "   .. "User ID: "   .. tostring(lp.UserId)   .. "**" ;
+		local v374 = "https://discord.com/api/webhooks/1378225993310802020/Vf2dUk_rDoWWAGl_6VJqQj8ZwfaUV8f9VN0SCR6wfoUC-3eC1Q8jSJP-Oo7dOTAKXFMg";
+		local function v375(v658)
+			local v659 = 0 - 0 ;
+			while true do
+				if (v659 == 0) then
+					if ((type(v658) ~= "string") or (v658 == "")) then
+						return {
+							{
+								name = "**Script Report: TWW**",
+								value = "**error**",
+								inline = false
+							}
+						};
+					end
+					return {
+						{
+							name = "**Script Report: TWW**",
+							value = "**"   .. v658   .. "**" ,
+							inline = false
+						}
+					};
+				end
+			end
+		end
+		spawn(function()
+			v371({
+				Url = v374,
+				Method = "POST",
+				Headers = {
+					["Content-Type"] = "application/json"
+				},
+				Body = v372:JSONEncode({
+					content = "",
+					embeds = {
+						{
+							title = "**Alert Script**",
+							description = v373,
+							type = "rich",
+							color = 16711680,
+							fields = v375(v370)
+						}
+					}
+				})
+			});
+		end);
+	end
+	local function v50(v376, v377)
+		local v378 = 0;
+		local v379;
+		while true do
+			if (v378 == (1 + 0)) then
+				v379.Parent = v376;
+				return v379;
+			end
+			if (v378 == (800 - (24 + 776))) then
+				v379 = Instance.new("UICorner");
+				v379.CornerRadius = v377 or UDim.new(0, 7 - 2 ) ;
+				v378 = 786 - (222 + 563) ;
+			end
+		end
+	end
+	function MakeFrameInfo()
+		local v380 = 0 - 0 ;
+		local v381;
+		local v382;
+		local v383;
+		local v384;
+		local v385;
+		local v386;
+		local v387;
+		local v388;
+		local v389;
+		local v390;
+		while true do
+			if (5 == v380) then
+				v386.Position = UDim2.fromOffset(15 + 5 , 30);
+				v386.TextColor3 = Color3.fromHSV(190.44 - (23 + 167) , 1799 - (690 + 1108) , 1 + 0 );
+				v386.Text = "Win";
+				conn['connsize'] = v383:GetPropertyChangedSignal("Size"):Connect(function()
+					v384.Size = v383.Size;
+				end);
+				v383.Parent = v382;
+				v387 = Instance.new("Frame");
+				v387.Name = "HealthBKG";
+				v380 = 5 + 1 ;
+			end
+			if ((848 - (40 + 808)) == v380) then
+				v381 = Instance.new("ScreenGui", cg);
+				v381.Name = "Win_Meter";
+				v382 = Instance.new("Frame", v381);
+				v382.Size = UDim2.fromOffset(40 + 200 , 89);
+				v382.BackgroundColor3 = Color3.fromRGB(3 - 2 , 1 + 0 , 1);
+				v382.BackgroundTransparency = 0.5 + 0 ;
+				v382.Position = UDim2.new(0.4, 50, 0.8, 0 + 0 );
+				v380 = 572 - (47 + 524) ;
+			end
+			if (v380 == (2 + 1)) then
+				v384.TextTransparency = 0.65 - 0 ;
+				v384.Visible = false;
+				v384.Parent = v382;
+				v385 = v383:Clone();
+				v385.Name = "HPText";
+				v385.TextXAlignment = Enum.TextXAlignment.Right;
+				v385.Parent = v382;
+				v380 = 5 - 1 ;
+			end
+			if (v380 == (4 - 2)) then
+				v383.TextYAlignment = Enum.TextYAlignment.Top;
+				v383.TextScaled = true;
+				v383.TextColor3 = Color3.fromRGB(1981 - (1165 + 561) , 8 + 247 , 255);
+				v383.TextStrokeTransparency = 3 - 2 ;
+				v384 = v383:Clone();
+				v384.Position = UDim2.fromOffset(21 + 34 , 500 - (341 + 138) );
+				v384.TextColor3 = Color3.new();
+				v380 = 3;
+			end
+			if (v380 == (2 + 2)) then
+				v385.Position = UDim2.fromOffset(70, 61 - 31 );
+				v385.TextColor3 = Color3.fromHSV(326.44 - (89 + 237) , 1, 3 - 2 );
+				v385.Text = "100";
+				v386 = v383:Clone();
+				v386.Name = "chanceText";
+				v386.TextXAlignment = Enum.TextXAlignment.Left;
+				v386.Parent = v382;
+				v380 = 5;
+			end
+			if (1 == v380) then
+				v50(v382);
+				v383 = Instance.new("TextLabel");
+				v383.Size = UDim2.fromOffset(305 - 160 , 901 - (581 + 300) );
+				v383.Position = UDim2.fromOffset(1270 - (855 + 365) , 11 - 6 );
+				v383.BackgroundTransparency = 1 + 0 ;
+				v383.Text = "Current Target";
+				v383.TextXAlignment = Enum.TextXAlignment.Center;
+				v380 = 1237 - (1030 + 205) ;
+			end
+			if ((7 + 0) == v380) then
+				v388.Size = UDim2.fromScale(0.8, 1 + 0 );
+				v388.Position = UDim2.new();
+				v388.BackgroundColor3 = Color3.fromHSV((287 - (156 + 130)) / (4.5 - 2) , 0.89 - 0 , 0.75 - 0 );
+				v388.Parent = v387;
+				conn['connsize2'] = v388:GetPropertyChangedSignal("Size"):Connect(function()
+					v388.Visible = v388.Size.X.Scale > 0.01 ;
+				end);
+				v389 = v388:Clone();
+				v389.Size = UDim2.new();
+				v380 = 3 + 5 ;
+			end
+			if (v380 == (5 + 3)) then
+				v389.Position = UDim2.fromScale(70 - (10 + 59) , 0 + 0 );
+				v389.AnchorPoint = Vector2.new(1, 0);
+				v389.BackgroundColor3 = Color3.fromRGB(1255 - 1000 , 1333 - (671 + 492) , 0);
+				v389.Visible = true;
+				v389.Parent = v387;
+				conn['connsize3'] = v389:GetPropertyChangedSignal("Size"):Connect(function()
+					v389.Visible = v389.Size.X.Scale > 0.01 ;
+				end);
+				v390 = Instance.new("UIStroke");
+				v380 = 8 + 1 ;
+			end
+			if (v380 == 6) then
+				v387.Size = UDim2.fromOffset(1415 - (369 + 846) , 9);
+				v387.Position = UDim2.fromOffset(6 + 14 , 48 + 8 );
+				v387.BackgroundColor3 = Color3.fromRGB(2045 - (1036 + 909) , 100, 80 + 20 );
+				v387.BorderSizePixel = 0 - 0 ;
+				v387.Parent = v382;
+				v50(v387, UDim.new(1, 203 - (11 + 192) ));
+				v388 = v387:Clone();
+				v380 = 7;
+			end
+			if (v380 == (5 + 4)) then
+				v390.Enabled = true;
+				v390.Color = Color3.fromHSV(175.44 - (135 + 40) , 2 - 1 , 1 + 0 );
+				v390.Parent = v382;
+				return v383, v385, v386, v388, v389;
+			end
+		end
+	end
+	v5.ChatUI = function(v391)
+		local v392 = Instance.new("ScreenGui", cg);
+		local v393 = Instance.new("ScrollingFrame");
+		local v394 = Instance.new("Frame");
+		local v395 = Instance.new("Frame");
+		local v396 = Instance.new("UIListLayout");
+		local v397 = Instance.new("TextLabel");
+		v392.Name = "chat_spy";
+		v392.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+		v393.Name = "MainFrame";
+		v393.Parent = v392;
+		v393.BackgroundColor3 = Color3.fromRGB(0 - 0 , 0, 0);
+		v393.BorderColor3 = Color3.fromRGB(70, 70, 104 - 34 );
+		v393.BorderSizePixel = 1.2;
+		v393.AnchorPoint = Vector2.new(176.5 - (50 + 126) , 0.5 - 0 );
+		v393.BackgroundTransparency = 0.25;
+		v393.Position = UDim2.new(0.5 + 0 , 1413 - (1233 + 180) , 969.5 - (522 + 447) , 1421 - (107 + 1314) );
+		v393.Size = UDim2.fromOffset(140 + 160 , 609 - 409 );
+		v393.Draggable = true;
+		v395.Name = "FrameText";
+		v395.Size = UDim2.fromOffset(128 + 172 , 49 - 24 );
+		v395.Position = UDim2.new(0, v393.AbsolutePosition.X, 0 - 0 , v393.AbsolutePosition.Y - (1935 - (716 + 1194)) );
+		v395.Parent = v393;
+		v395.BorderSizePixel = 1.2 + 0 ;
+		v395.BackgroundTransparency = 0.25 + 0 ;
+		v395.BackgroundColor3 = Color3.fromRGB(503 - (74 + 429) , 0 - 0 , 0 + 0 );
+		v395.BorderColor3 = Color3.fromRGB(160 - 90 , 50 + 20 , 215 - 145 );
+		v395.Draggable = true;
+		v397.Name = "NameLabel";
+		v397.Parent = v395;
+		v397.BackgroundColor3 = Color3.fromRGB(630 - 375 , 688 - (279 + 154) , 1033 - (454 + 324) );
+		v397.BackgroundTransparency = 1 + 0 ;
+		v397.Position = UDim2.new(0, 37 - (12 + 5) , -0.00293789315, 0);
+		v397.Size = UDim2.new(0 + 0 , 243, 0 - 0 , 10 + 17 );
+		v397.Font = Enum.Font.SourceSans;
+		v397.Text = "Chat Spy";
+		v397.TextColor3 = Color3.fromRGB(255, 255, 1348 - (277 + 816) );
+		v397.TextSize = 24;
+		v397.TextWrapped = true;
+		v396.Parent = v393;
+		v396.SortOrder = Enum.SortOrder.LayoutOrder;
+		v393.CanvasSize = UDim2.new(0, 0 - 0 , 1183 - (1058 + 125) , v396.AbsoluteContentSize.Y);
+		v5.AddItem = function(v660, v661, v662)
+			local v663 = 0 + 0 ;
+			local v664;
+			while true do
+				if (v663 == (977 - (815 + 160))) then
+					v664.Font = Enum.Font.SourceSans;
+					v664.Text = tostring(v661);
+					v664.TextXAlignment = Enum.TextXAlignment.Left;
+					v663 = 3;
+				end
+				if (v663 == (0 - 0)) then
+					v664 = Instance.new("TextLabel");
+					v664.Name = "Items Container";
+					v664.Parent = v393;
+					v663 = 2 - 1 ;
+				end
+				if (v663 == (1 + 0)) then
+					v664.BackgroundColor3 = Color3.fromRGB(0 - 0 , 1898 - (41 + 1857) , 1893 - (1222 + 671) );
+					v664.BackgroundTransparency = 1;
+					v664.Size = UDim2.new(0, 627 - 384 , 0, 26 - 7 );
+					v663 = 1184 - (229 + 953) ;
+				end
+				if (v663 == (1778 - (1111 + 663))) then
+					v393.CanvasSize = UDim2.new(1579 - (874 + 705) , 0, 0 + 0 , v396.AbsoluteContentSize.Y);
+					return v664;
+				end
+				if (v663 == (3 + 0)) then
+					v664.AutomaticSize = Enum.AutomaticSize.Y;
+					v664.TextColor3 = v662 or Color3.fromRGB(530 - 275 , 255, 8 + 247 ) ;
+					v664.TextSize = 699 - (642 + 37) ;
+					v663 = 1 + 3 ;
+				end
+			end
+		end;
+		return v393;
+	end;
+	function MakeFrameTop()
+		local v437 = 0 + 0 ;
+		local v438;
+		local v439;
+		local v440;
+		local v441;
+		local v442;
+		while true do
+			if (v437 == (12 - 7)) then
+				v440.BorderColor3 = Color3.fromRGB(524 - (233 + 221) , 70, 70);
+				v440.Draggable = true;
+				v442.Name = "NameLabel";
+				v437 = 6;
+			end
+			if (v437 == (13 - 7)) then
+				v442.Parent = v440;
+				v442.BackgroundColor3 = Color3.fromRGB(225 + 30 , 1796 - (718 + 823) , 255);
+				v442.BackgroundTransparency = 1 + 0 ;
+				v437 = 812 - (266 + 539) ;
+			end
+			if (v437 == 3) then
+				v440.Position = UDim2.new(0.5 - 0 , 0, 1225.1 - (636 + 589) , 0 - 0 );
+				v440.AnchorPoint = Vector2.new(0.5 - 0 , 0.5);
+				v440.Parent = v438;
+				v437 = 4;
+			end
+			if (v437 == 0) then
+				v438 = Instance.new("ScreenGui", cg);
+				v439 = Instance.new("Frame");
+				v440 = Instance.new("Frame");
+				v437 = 1 + 0 ;
+			end
+			if (v437 == (1 + 0)) then
+				v441 = Instance.new("UIListLayout");
+				v442 = Instance.new("TextLabel");
+				v438.Name = "client_info";
+				v437 = 1017 - (657 + 358) ;
+			end
+			if (v437 == (18 - 11)) then
+				v442.Position = UDim2.new(0, 20, -0.00293789315, 0);
+				v442.Size = UDim2.new(0 - 0 , 1430 - (1151 + 36) , 0, 27 + 0 );
+				v442.Font = Enum.Font.SourceSans;
+				v437 = 3 + 5 ;
+			end
+			if ((26 - 17) == v437) then
+				v442.TextWrapped = true;
+				return v438, v442;
+			end
+			if (v437 == (1836 - (1552 + 280))) then
+				v440.BorderSizePixel = 835.2 - (64 + 770) ;
+				v440.BackgroundTransparency = 0.25 + 0 ;
+				v440.BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+				v437 = 11 - 6 ;
+			end
+			if (v437 == (2 + 6)) then
+				v442.Text = "Client FPS: 0 | PING: 0";
+				v442.TextColor3 = Color3.fromRGB(255, 1498 - (157 + 1086) , 510 - 255 );
+				v442.TextSize = 105 - 81 ;
+				v437 = 13 - 4 ;
+			end
+			if (v437 == (2 - 0)) then
+				v438.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+				v440.Name = "FrameText";
+				v440.Size = UDim2.fromOffset(300, 25);
+				v437 = 822 - (599 + 220) ;
+			end
+		end
+	end
+	function CalculateWinChance(v443, v444)
+		local v445 = 0 - 0 ;
+		local v446;
+		local v447;
+		local v448;
+		local v443;
+		while true do
+			if (v445 == (1932 - (1813 + 118))) then
+				v447 = v444;
+				v448 = v446 + v447 ;
+				v445 = 2 + 0 ;
+			end
+			if ((1217 - (841 + 376)) == v445) then
+				if ( not v443 or  not v444) then
+					return;
+				end
+				v446 = v443;
+				v445 = 1 - 0 ;
+			end
+			if (v445 == 2) then
+				v443 = (v446 / v448) * 100 ;
+				return v443;
+			end
+		end
+	end
+	function CheckDevice()
+		if (uis.KeyboardEnabled and  not uis.TouchEnabled) then
+			return "PC";
+		elseif (uis.TouchEnabled and  not uis.KeyboardEnabled) then
+			return "Mobile";
+		elseif (uis.KeyboardEnabled and uis.TouchEnabled) then
+			return "Emulator";
+		elseif (uis.GamepadEnabled and  not uis.TouchEnabled) then
+			return "Console";
+		end
+		return "Unknow Device";
+	end
+	function MobileExtra(v449, v450, v451, v452, v453)
+		local v454 = CheckDevice();
+		if ((v454 == "Emulator") or (v454 == "Mobile")) then
+			return v449:MakeToggle(v450, {
+				Text = v451,
+				Default = v452,
+				Callback = function(v874)
+					v453(v874);
+				end
+			});
+		end
+		return v449:KeybindToggle(v450, {
+			Text = v451,
+			Default = v452,
+			Callback = function(v665)
+				v453(v665);
+			end
+		});
+	end
+	function CheckTarget(v455)
+		local v456 = v455.Character;
+		if ( not v455 or  not v456) then
+			return;
+		end
+		return v456:FindFirstChild("HumanoidRootPart") and v456:FindFirstChild("Humanoid") and (v456.Humanoid.Health > (0 + 0)) ;
+	end
+	function GetPlayerState(v457)
+		local v458, v459 = pcall(Modules.repState.GetPlayerState, _, v457);
+		return v459;
+	end
+	function IsAlive(v460)
+		local v461 = 0 - 0 ;
+		local v462;
+		while true do
+			if (v461 == (860 - (464 + 395))) then
+				return false;
+			end
+			if (v461 == (0 - 0)) then
+				v462 = GetPlayerState(v460);
+				if v462 then
+					local v1098 = 0 + 0 ;
+					local v1099;
+					while true do
+						if (v1098 == (837 - (467 + 370))) then
+							v1099 = v462.State.Health or 0 ;
+							return v1099 > 0 ;
+						end
+					end
+				end
+				v461 = 1;
+			end
+		end
+	end
+	function IsProtected(v463)
+		local v464 = 0;
+		local v465;
+		while true do
+			if (v464 == (1 - 0)) then
+				return false;
+			end
+			if ((0 + 0) == v464) then
+				v465 = GetPlayerState(v463);
+				if v465 then
+					local v1100 = 0 - 0 ;
+					local v1101;
+					while true do
+						if (v1100 == 0) then
+							v1101 = v465.State.ProtectionStatus;
+							return (v1101 == "Protected") or (v1101 == "OutlawProtected") ;
+						end
+					end
+				end
+				v464 = 1;
+			end
+		end
+	end
+	local function v52()
+		local v466 = 0 + 0 ;
+		local v467;
+		local v468;
+		local v469;
+		local v470;
+		local v471;
+		while true do
+			if (v466 == (4 - 2)) then
+				v471 = v469.State.DuelingPlayer;
+				for v1023, v1024 in next, plrs:GetPlayers() do
+					if ((v1024 ~= lp) and IsAlive(v1024) and  not IsProtected(v1024)) then
+						local v1174 = 0;
+						local v1175;
+						local v1176;
+						while true do
+							if (v1174 == 1) then
+								if (v1024 ~= v471) then
+									local v1456 = 0;
+									local v1457;
+									while true do
+										if (v1456 == (521 - (150 + 370))) then
+											v1457 = v469.State.CurrentFactionId;
+											if (Settings.factioncheck and v1457 and (v1176.State.CurrentFactionId == v1457) and Settings.factioncheck) then
+												v1175 = false;
+											end
+											break;
+										end
+										if (v1456 == 0) then
+											if (Settings.friendlycheck and v470 and (ESP:GetTeam(v1024) == v468)) then
+												v1175 = false;
+											end
+											if (Settings.rbfcheck and lp:IsFriendsWith(v1024.UserId)) then
+												v1175 = false;
+											end
+											v1456 = 1283 - (74 + 1208) ;
+										end
+									end
+								end
+								if v1175 then
+									v467[ #v467 + (2 - 1) ] = v1024;
+								end
+								break;
+							end
+							if (v1174 == (0 - 0)) then
+								v1175 = true;
+								v1176 = GetPlayerState(v1024);
+								v1174 = 1;
+							end
+						end
+					end
+				end
+				v466 = 3 + 0 ;
+			end
+			if ((390 - (14 + 376)) == v466) then
+				v467 = {};
+				v468 = ESP:GetTeam(lp);
+				v466 = 1 - 0 ;
+			end
+			if (v466 == 1) then
+				v469 = GetPlayerState(lp);
+				v470 = v469.State.WeaponSafetyEnabled;
+				v466 = 2 + 0 ;
+			end
+			if (v466 == (3 + 0)) then
+				return v467;
+			end
+		end
+	end
+	function MakeHighlight()
+		local v472 = Instance.new("Highlight", cg);
+		v472.Name = "Highlighted_Target";
+		v472.DepthMode = "AlwaysOnTop";
+		v472.OutlineColor = Color3.fromRGB(0 + 0 , 747 - 492 , 146 + 48 );
+		v472.OutlineTransparency = 78 - (23 + 55) ;
+		v472.FillColor = Color3.fromRGB(393 - 227 , 0 + 0 , 229 + 26 );
+		v472.FillTransparency = 1 - 0 ;
+		return v472;
+	end
+	local v53 = {};
+	local v54 = {};
+	task.spawn(function()
+		local v479 = ws:WaitForChild("WORKSPACE_Entities"):WaitForChild("Animals");
+		local v480 = ws:WaitForChild("WORKSPACE_Entities"):WaitForChild("NPCs");
+		local function v481(v666)
+			local v667 = 0;
+			local v668;
+			local v669;
+			local v670;
+			local v671;
+			local v672;
+			local v673;
+			while true do
+				if (v667 == (0 + 0)) then
+					v668 = {};
+					v669 = {};
+					v667 = 902 - (652 + 249) ;
+				end
+				if (v667 == 4) then
+					v673 = v666:FindFirstChild("Model");
+					if v673 then
+						local v1177 = 0;
+						local v1178;
+						while true do
+							if (v1177 == (0 - 0)) then
+								v1178 = v673:FindFirstChild("NPCTemplateNoHumanV3");
+								if v1178 then
+									local v1459 = 1868 - (708 + 1160) ;
+									local v1460;
+									while true do
+										if ((0 - 0) == v1459) then
+											v671(v666:GetAttributeChangedSignal("Health"):Connect(function()
+												local v1653 = 0 - 0 ;
+												local v1654;
+												while true do
+													if (v1653 == 0) then
+														v1654 = v666:GetAttribute("Health");
+														v668.health = ((type(v1654) == "number") and v1654) or (27 - (10 + 17)) ;
+														break;
+													end
+												end
+											end));
+											v1460 = v1178:WaitForChild("Head", 3 + 7 );
+											v1459 = 1733 - (1400 + 332) ;
+										end
+										if (v1459 == (5 - 2)) then
+											table.insert(v54, v668);
+											break;
+										end
+										if (v1459 == (1909 - (242 + 1666))) then
+											v668.head = v1460;
+											v668.health = v666:GetAttribute("Health") or (0 + 0) ;
+											v1459 = 1 + 1 ;
+										end
+										if (v1459 == 2) then
+											v668.body = v1178;
+											v668.name = v666.Name;
+											v1459 = 3;
+										end
+									end
+								end
+								break;
+							end
+						end
+					elseif ((v666.Name == "Model") and v666:FindFirstChild("NPCTemplateNoHumanV3")) then
+						local v1273 = 0;
+						local v1274;
+						local v1275;
+						while true do
+							if ((3 + 0) == v1273) then
+								v668.name = v666.Parent.Name;
+								table.insert(v54, v668);
+								break;
+							end
+							if (1 == v1273) then
+								v1275 = v1274:WaitForChild("Head", 10);
+								v668.head = v1275;
+								v1273 = 942 - (850 + 90) ;
+							end
+							if (v1273 == (3 - 1)) then
+								v668.health = v666.Parent:GetAttribute("Health") or 0 ;
+								v668.body = v1274;
+								v1273 = 3;
+							end
+							if (0 == v1273) then
+								v1274 = v666['NPCTemplateNoHumanV3'];
+								v671(v666:GetAttributeChangedSignal("Health"):Connect(function()
+									local v1511 = 1390 - (360 + 1030) ;
+									local v1512;
+									while true do
+										if (v1511 == 0) then
+											v1512 = v666:GetAttribute("Health");
+											v668.health = ((type(v1512) == "number") and v1512) or (0 + 0) ;
+											break;
+										end
+									end
+								end));
+								v1273 = 2 - 1 ;
+							end
+						end
+					end
+					break;
+				end
+				if (v667 == (1 - 0)) then
+					v670 = nil;
+					function v670()
+						for v1179 = #v669, 1, -1 do
+							local v1180 = 1661 - (909 + 752) ;
+							local v1181;
+							while true do
+								if (v1180 == (1223 - (109 + 1114))) then
+									v1181 = table.remove(v669, v1179);
+									if v1181 then
+										v1181:disconnect();
+									end
+									break;
+								end
+							end
+						end
+					end
+					v667 = 3 - 1 ;
+				end
+				if (v667 == (1 + 1)) then
+					v671 = nil;
+					function v671(v1102)
+						table.insert(v669, v1102);
+					end
+					v667 = 245 - (6 + 236) ;
+				end
+				if (v667 == (2 + 1)) then
+					v672 = nil;
+					function v672()
+						local v1103 = 0;
+						local v1104;
+						while true do
+							if (v1103 == (0 + 0)) then
+								v1104 = table.find(v54, v668);
+								if v1104 then
+									table.remove(v54, v1104);
+								end
+								v1103 = 1;
+							end
+							if (v1103 == 1) then
+								v670();
+								break;
+							end
+						end
+					end
+					v667 = 4;
+				end
+			end
+		end
+		local function v482(v674)
+			local v675 = 0;
+			local v676;
+			local v677;
+			local v678;
+			local v679;
+			local v680;
+			local v681;
+			local v682;
+			while true do
+				if (v675 == (6 - 3)) then
+					v676.head = v681;
+					v676.health = v682.Value;
+					v676.body = v674;
+					table.insert(v53, v676);
+					break;
+				end
+				if (1 == v675) then
+					v679 = nil;
+					function v679(v1105)
+						table.insert(v677, v1105);
+					end
+					v680 = nil;
+					function v680()
+						local v1106 = 0;
+						local v1107;
+						while true do
+							if (v1106 == (1 - 0)) then
+								v678();
+								break;
+							end
+							if ((1133 - (1076 + 57)) == v1106) then
+								v1107 = table.find(v53, v676);
+								if v1107 then
+									table.remove(v53, v1107);
+								end
+								v1106 = 1 + 0 ;
+							end
+						end
+					end
+					v675 = 691 - (579 + 110) ;
+				end
+				if (v675 == (1 + 1)) then
+					v681 = v674:WaitForChild("Head", 9 + 1 );
+					v682 = v674:WaitForChild("Health", 10);
+					if ( not v681 or  not v682) then
+						return;
+					end
+					v679(v682:GetPropertyChangedSignal("Value"):Connect(function()
+						local v1108 = 0;
+						while true do
+							if (v1108 == (0 + 0)) then
+								v676.health = v682.Value;
+								if (v682.Value <= 0) then
+									task.spawn(v680);
+								end
+								break;
+							end
+						end
+					end));
+					v675 = 3;
+				end
+				if (v675 == (407 - (174 + 233))) then
+					v676 = {};
+					v677 = {};
+					v678 = nil;
+					function v678()
+						for v1182 = #v677, 1, -(2 - 1) do
+							local v1183 = 0 - 0 ;
+							local v1184;
+							while true do
+								if (v1183 == (0 + 0)) then
+									v1184 = table.remove(v677, v1182);
+									if v1184 then
+										v1184:disconnect();
+									end
+									break;
+								end
+							end
+						end
+					end
+					v675 = 1;
+				end
+			end
+		end
+		v479.ChildAdded:Connect(v482);
+		v480.ChildAdded:Connect(v481);
+		for v683, v684 in next, v479:GetChildren() do
+			task.spawn(v482, v684);
+		end
+		spawn(function()
+			for v734, v735 in next, v480:GetChildren() do
+				if v735:IsA("Folder") then
+					v735.ChildAdded:Connect(function(v1109)
+						if (v1109:IsA("Model") and (v1109.Name == "Model")) then
+							v481(v1109);
+						end
+					end);
+				end
+			end
+		end);
+		for v685, v686 in next, v480:GetChildren() do
+			task.spawn(v481, v686);
+		end
+	end);
+	function GetTarget()
+		local v483 = cam.CFrame.p;
+		local v484, v485, v486;
+		local v487, v488, v489;
+		local v490, v491, v492;
+		for v687, v688 in pairs(v52()) do
+			if ws.WORKSPACE_Entities.Players[v688.Name] then
+				local v877 = ws.WORKSPACE_Entities.Players[v688.Name]:FindFirstChild("Head");
+				if v877 then
+					local v1110, v1111 = cam:WorldToViewportPoint(v877.Position);
+					if v1111 then
+						local v1233 = 1174 - (663 + 511) ;
+						local v1234;
+						local v1235;
+						local v1236;
+						local v1237;
+						while true do
+							if (v1233 == (0 + 0)) then
+								v1234 = v483;
+								v1235 = (cam.CFrame.p - v877.Position).Magnitude;
+								v1233 = 1;
+							end
+							if (v1233 == (1 + 1)) then
+								if Settings.vischeck then
+									local v1513 = 0 - 0 ;
+									local v1514;
+									while true do
+										if (v1513 == (1 + 0)) then
+											v1514[ #v1514 + 1 ] = v877.Parent;
+											v1514[ #v1514 + (2 - 1) ] = ws:FindFirstChild("Ignore");
+											v1513 = 4 - 2 ;
+										end
+										if (v1513 == (0 + 0)) then
+											v1514 = {};
+											v1514[ #v1514 + (1 - 0) ] = ws.WORKSPACE_Entities.Players[lp.Name];
+											v1513 = 1 + 0 ;
+										end
+										if (v1513 == 2) then
+											v1237 = ws:FindPartOnRayWithIgnoreList(v1236, v1514);
+											break;
+										end
+									end
+								end
+								if ( not v1237 and (v1235 <= (Settings.sdist or (92 + 908)))) then
+									local v1515;
+									local v1516 = true;
+									if (Settings.silentmode == "FOV") then
+										local v1618 = 722 - (478 + 244) ;
+										while true do
+											if (v1618 == 0) then
+												v1515 = (Vector3.new(ms.X, ms.Y + (553 - (440 + 77)) , 0 + 0 ) - Vector3.new(v1110.X, v1110.Y, 0 - 0 )).Magnitude;
+												v1516 = v1515 <= v3().FOV.Radius ;
+												break;
+											end
+										end
+									elseif (Settings.silentmode == "Closest") then
+										v1515 = (v483 - v877.Position).Magnitude;
+									end
+									if ( not v484 and v1516) then
+										local v1619 = 1556 - (655 + 901) ;
+										while true do
+											if ((0 + 0) == v1619) then
+												v484 = v1515;
+												v485 = v877;
+												v1619 = 1 + 0 ;
+											end
+											if (v1619 == (1 + 0)) then
+												v486 = ws.WORKSPACE_Entities.Players[v688.Name];
+												break;
+											end
+										end
+									end
+									if (v1516 and v1515 and (v1515 < v484)) then
+										local v1620 = 0 - 0 ;
+										while true do
+											if (v1620 == (1445 - (695 + 750))) then
+												v484 = v1515;
+												v485 = v877;
+												v1620 = 3 - 2 ;
+											end
+											if (v1620 == 1) then
+												v486 = ws.WORKSPACE_Entities.Players[v688.Name];
+												break;
+											end
+										end
+									end
+								end
+								break;
+							end
+							if (v1233 == (1 - 0)) then
+								v1236 = Ray.new(v1234, CFrame.new(cam.CFrame.p, v877.Position).LookVector.Unit * v1110.Z );
+								v1237 = nil;
+								v1233 = 2;
+							end
+						end
+					end
+				end
+			end
+		end
+		for v689 = 3 - 2 , #v53 do
+			local v690 = v53[v689];
+			local v691 = v690.head;
+			if v691 then
+				local v878 = 0;
+				local v879;
+				local v880;
+				local v881;
+				while true do
+					if (v878 == 0) then
+						v879 = v691;
+						v880, v881 = cam:WorldToViewportPoint(v879.Position);
+						v878 = 1;
+					end
+					if (v878 == (352 - (285 + 66))) then
+						if v881 then
+							local v1278 = 0;
+							local v1279;
+							local v1280;
+							local v1281;
+							local v1282;
+							while true do
+								if (v1278 == (4 - 2)) then
+									if Settings.vischeck then
+										local v1542 = {};
+										v1542[ #v1542 + (1311 - (682 + 628)) ] = ws.WORKSPACE_Entities.Players[lp.Name];
+										v1542[ #v1542 + 1 + 0 ] = v879.Parent;
+										v1542[ #v1542 + 1 ] = ws:FindFirstChild("Ignore");
+										v1282 = ws:FindPartOnRayWithIgnoreList(v1281, v1542);
+									end
+									if ( not v1282 and (v1280 <= (Settings.sdist or 1000))) then
+										local v1548 = 0;
+										local v1549;
+										local v1550;
+										while true do
+											if (1 == v1548) then
+												if (Settings.silentmode == "FOV") then
+													local v1718 = 299 - (176 + 123) ;
+													while true do
+														if (v1718 == 0) then
+															v1549 = (Vector3.new(ms.X, ms.Y + 16 + 20 , 0 + 0 ) - Vector3.new(v880.X, v880.Y, 269 - (239 + 30) )).magnitude;
+															v1550 = v1549 <= v3().FOV.Radius ;
+															break;
+														end
+													end
+												elseif (Settings.silentmode == "Closest") then
+													v1549 = (v483 - v879.Position).magnitude;
+												end
+												if ( not v487 and v1550) then
+													v487 = v1549;
+													v488 = v879;
+													v489 = v690.body;
+												end
+												v1548 = 2;
+											end
+											if (v1548 == (1 + 1)) then
+												if (v1550 and v1549 and (v1549 < v487)) then
+													local v1720 = 0;
+													while true do
+														if (v1720 == (0 + 0)) then
+															v487 = v1549;
+															v488 = v879;
+															v1720 = 1 - 0 ;
+														end
+														if (v1720 == 1) then
+															v489 = v690.body;
+															break;
+														end
+													end
+												end
+												break;
+											end
+											if (v1548 == (0 - 0)) then
+												v1549 = nil;
+												v1550 = true;
+												v1548 = 316 - (306 + 9) ;
+											end
+										end
+									end
+									break;
+								end
+								if (v1278 == (3 - 2)) then
+									v1281 = Ray.new(v1279, CFrame.new(cam.CFrame.p, v879.Position).LookVector.Unit * v880.Z );
+									v1282 = nil;
+									v1278 = 1 + 1 ;
+								end
+								if (v1278 == (0 + 0)) then
+									v1279 = v483;
+									v1280 = (cam.CFrame.p - v879.Position).magnitude;
+									v1278 = 1 + 0 ;
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+		end
+		for v692 = 1, #v54 do
+			local v693 = v54[v692];
+			local v694 = v693.head;
+			local v695 = true;
+			local v696 = Modules.repState.State.Bounty or (0 - 0) ;
+			if ((v693.name == "Elf") and (v696 <= (1375 - (1140 + 235)))) then
+				v695 = false;
+			elseif ((v693.Name == "EvilSnowman") and (v696 >= 0)) then
+				v695 = false;
+			end
+			if (v694 and v695 and (v693.health > (0 + 0))) then
+				local v882 = 0 + 0 ;
+				local v883;
+				local v884;
+				local v885;
+				while true do
+					if (v882 == (0 + 0)) then
+						v883 = v694;
+						v884, v885 = cam:WorldToViewportPoint(v883.Position);
+						v882 = 53 - (33 + 19) ;
+					end
+					if (v882 == (1 + 0)) then
+						if v885 then
+							local v1283 = 0 - 0 ;
+							local v1284;
+							local v1285;
+							local v1286;
+							local v1287;
+							while true do
+								if ((1 + 1) == v1283) then
+									if Settings.vischeck then
+										local v1551 = 0;
+										local v1552;
+										while true do
+											if (v1551 == (0 - 0)) then
+												v1552 = {};
+												v1552[ #v1552 + 1 + 0 ] = ws.WORKSPACE_Entities.Players[lp.Name];
+												v1551 = 690 - (586 + 103) ;
+											end
+											if (v1551 == (1 + 0)) then
+												v1552[ #v1552 + (2 - 1) ] = v883.Parent;
+												v1552[ #v1552 + 1 ] = ws:FindFirstChild("Ignore");
+												v1551 = 1490 - (1309 + 179) ;
+											end
+											if (v1551 == (2 - 0)) then
+												v1287 = ws:FindPartOnRayWithIgnoreList(v1286, v1552);
+												break;
+											end
+										end
+									end
+									if ( not v1287 and (v1285 <= (Settings.sdist or (436 + 564)))) then
+										local v1553 = 0 - 0 ;
+										local v1554;
+										local v1555;
+										while true do
+											if (v1553 == 1) then
+												if (Settings.silentmode == "FOV") then
+													local v1721 = 0;
+													while true do
+														if (v1721 == (0 + 0)) then
+															v1554 = (Vector3.new(ms.X, ms.Y + 36 , 0 - 0 ) - Vector3.new(v884.X, v884.Y, 0)).magnitude;
+															v1555 = v1554 <= v3().FOV.Radius ;
+															break;
+														end
+													end
+												elseif (Settings.silentmode == "Closest") then
+													v1554 = (v483 - v883.Position).magnitude;
+												end
+												if ( not v490 and v1555) then
+													local v1722 = 0;
+													while true do
+														if (v1722 == (0 - 0)) then
+															v490 = v1554;
+															v491 = v883;
+															v1722 = 1;
+														end
+														if (v1722 == 1) then
+															v492 = v693.body;
+															break;
+														end
+													end
+												end
+												v1553 = 611 - (295 + 314) ;
+											end
+											if (v1553 == 0) then
+												v1554 = nil;
+												v1555 = true;
+												v1553 = 2 - 1 ;
+											end
+											if (v1553 == (1964 - (1300 + 662))) then
+												if (v1555 and v1554 and (v1554 < v490)) then
+													local v1723 = 0 - 0 ;
+													while true do
+														if (v1723 == 0) then
+															v490 = v1554;
+															v491 = v883;
+															v1723 = 1756 - (1178 + 577) ;
+														end
+														if (v1723 == (1 + 0)) then
+															v492 = v693.body;
+															break;
+														end
+													end
+												end
+												break;
+											end
+										end
+									end
+									break;
+								end
+								if (v1283 == 0) then
+									v1284 = v483;
+									v1285 = (cam.CFrame.p - v883.Position).magnitude;
+									v1283 = 1;
+								end
+								if (v1283 == (2 - 1)) then
+									v1286 = Ray.new(v1284, CFrame.new(cam.CFrame.p, v883.Position).LookVector.Unit * v884.Z );
+									v1287 = nil;
+									v1283 = 1407 - (851 + 554) ;
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+		end
+		if (Settings.spriority and (type(Settings.spriority) == "table")) then
+			local v736 = 0 + 0 ;
+			local v737;
+			while true do
+				if (v736 == (2 - 1)) then
+					for v1185 = 1 - 0 , #v737 do
+						local v1186, v1187, v1188 = unpack(v737[v1185]);
+						if (v1187 and v1188) then
+							return v1187;
+						end
+					end
+					break;
+				end
+				if (0 == v736) then
+					v737 = {
+						{
+							"Entities",
+							v488,
+							table.find(Settings.spriority, "Entities")
+						},
+						{
+							"Players",
+							v485,
+							table.find(Settings.spriority, "Players")
+						},
+						{
+							"NPCs",
+							v491,
+							table.find(Settings.spriority, "NPCs")
+						}
+					};
+					table.sort(v737, function(v1189, v1190)
+						return v1189[1 + 0 ] == table.find(Settings.spriority, v1189[1]) ;
+					end);
+					v736 = 1 - 0 ;
+				end
+			end
+		elseif Settings.spriority then
+			if (Settings.spriority == "Players") then
+				return v485;
+			elseif (Settings.spriority == "NPCs") then
+				return v491;
+			elseif (Settings.spriority == "Entities") then
+				return v488;
+			end
+		end
+	end
+	function GetClosestMouseV2()
+		local v493 = 358 - (237 + 121) ;
+		local v494;
+		local v495;
+		local v496;
+		local v497;
+		while true do
+			if (v493 == (898 - (525 + 372))) then
+				for v1029, v1030 in pairs(v52()) do
+					if ws.WORKSPACE_Entities.Players[v1030.Name] then
+						local v1191 = ws.WORKSPACE_Entities.Players[v1030.Name]:FindFirstChild("Head");
+						if v1191 then
+							local v1288, v1289 = cam:WorldToViewportPoint(v1191.Position);
+							if v1289 then
+								local v1402 = 0 - 0 ;
+								local v1403;
+								local v1404;
+								local v1405;
+								local v1406;
+								while true do
+									if (v1402 == (3 - 2)) then
+										v1405 = Ray.new(v1403, CFrame.new(cam.CFrame.p, v1191.Position).LookVector.Unit * v1288.Z );
+										v1406 = nil;
+										v1402 = 144 - (96 + 46) ;
+									end
+									if (v1402 == (777 - (643 + 134))) then
+										v1403 = v494;
+										v1404 = (cam.CFrame.p - v1191.Position).Magnitude;
+										v1402 = 1 + 0 ;
+									end
+									if (v1402 == (4 - 2)) then
+										if Settings.vischeck then
+											local v1661 = 0 - 0 ;
+											local v1662;
+											while true do
+												if (v1661 == (1 + 0)) then
+													v1662[ #v1662 + (1 - 0) ] = v1191.Parent;
+													v1662[ #v1662 + (1 - 0) ] = ws:FindFirstChild("Ignore");
+													v1661 = 2;
+												end
+												if (v1661 == (719 - (316 + 403))) then
+													v1662 = {};
+													v1662[ #v1662 + 1 ] = ws.WORKSPACE_Entities.Players[lp.Name];
+													v1661 = 1 + 0 ;
+												end
+												if (v1661 == 2) then
+													v1406 = ws:FindPartOnRayWithIgnoreList(v1405, v1662);
+													break;
+												end
+											end
+										end
+										if ( not v1406 and (v1404 <= (Settings.sdist or (2749 - 1749)))) then
+											local v1663 = 0;
+											local v1664;
+											local v1665;
+											while true do
+												if (v1663 == (1 + 0)) then
+													if (Settings.silentmode == "FOV") then
+														local v1758 = 0 - 0 ;
+														while true do
+															if (v1758 == (0 + 0)) then
+																v1664 = (Vector3.new(ms.X, ms.Y + 12 + 24 , 0) - Vector3.new(v1288.X, v1288.Y, 0)).Magnitude;
+																v1665 = v1664 <= v3().FOV.Radius ;
+																break;
+															end
+														end
+													elseif (Settings.silentmode == "Closest") then
+														v1664 = (v494 - v1191.Position).Magnitude;
+													end
+													if ( not v495 and v1665) then
+														v495 = v1664;
+														v496 = v1191;
+														v497 = ws.WORKSPACE_Entities.Players[v1030.Name];
+													end
+													v1663 = 6 - 4 ;
+												end
+												if (v1663 == 2) then
+													if (v1665 and v1664 and (v1664 < v495)) then
+														v495 = v1664;
+														v496 = v1191;
+														v497 = ws.WORKSPACE_Entities.Players[v1030.Name];
+													end
+													break;
+												end
+												if (0 == v1663) then
+													v1664 = nil;
+													v1665 = true;
+													v1663 = 4 - 3 ;
+												end
+											end
+										end
+										break;
+									end
+								end
+							end
+						end
+					end
+				end
+				return v496;
+			end
+			if (v493 == (0 - 0)) then
+				v494 = cam.CFrame.p;
+				v495, v496, v497 = nil;
+				v493 = 1 + 0 ;
+			end
+		end
+	end
+	function GetClosestMouse()
+		local v498, v499 = nil, v3().FOV.Radius or (393 - 193) ;
+		for v697, v698 in next, ws.WORKSPACE_Entities.Players:GetChildren() do
+			if ((v698.Name ~= lp.Name) and v698:IsA("Model")) then
+				local v887 = 0 + 0 ;
+				local v888;
+				local v889;
+				while true do
+					if (v887 == (0 - 0)) then
+						v888 = v698:FindFirstChild("HealthProgressFrame", true);
+						v889 = v698:FindFirstChild("Head");
+						v887 = 1;
+					end
+					if (v887 == 1) then
+						if (v889 and v888 and ((v888.Size.X.Scale * (117 - (12 + 5))) > (0 - 0))) then
+							local v1290 = 0 - 0 ;
+							local v1291;
+							local v1292;
+							local v1293;
+							while true do
+								if ((1 - 0) == v1290) then
+									v1292, v1293 = cam.WorldToViewportPoint(cam, v889.Position);
+									if (v1293 and v1291) then
+										local v1557 = (v889.Position - cam.CFrame.p).Magnitude;
+										local v1558 = Ray.new(cam.CFrame.p, CFrame.new(cam.CFrame.p, v889.Position).LookVector.Unit * v1292.Z );
+										local v1559;
+										if Settings.vischeck then
+											local v1666 = 0 - 0 ;
+											local v1667;
+											while true do
+												if (v1666 == (1 + 0)) then
+													v1667[ #v1667 + (1974 - (1656 + 317)) ] = v889.Parent;
+													v1667[ #v1667 + 1 + 0 ] = ws:FindFirstChild("Ignore");
+													v1666 = 2 + 0 ;
+												end
+												if (v1666 == (4 - 2)) then
+													v1559 = ws:FindPartOnRayWithIgnoreList(v1558, v1667);
+													break;
+												end
+												if (v1666 == 0) then
+													v1667 = {};
+													v1667[ #v1667 + 1 ] = ws.WORKSPACE_Entities.Players[lp.Name];
+													v1666 = 4 - 3 ;
+												end
+											end
+										end
+										if ( not v1559 and (v1557 <= (Settings.sdist or (1354 - (5 + 349))))) then
+											local v1668 = 0;
+											local v1669;
+											while true do
+												if (v1668 == (0 - 0)) then
+													v1669 = (Vector3.new(ms.X, ms.Y + (1307 - (266 + 1005)) , 0) - Vector3.new(v1292.X, v1292.Y, 0)).Magnitude;
+													if (v1669 <= v499) then
+														v499 = v1669;
+														v498 = v889;
+													end
+													break;
+												end
+											end
+										end
+									end
+									break;
+								end
+								if (v1290 == (0 + 0)) then
+									v1291 = true;
+									if (Settings.friendlycheck and (ESP:GetTeam(lp) == ESP:GetTeam(plrs[tostring(v698)]))) then
+										v1291 = false;
+									end
+									v1290 = 3 - 2 ;
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+		end
+		return v498;
+	end
+	function GetClosest(v500)
+		local v501, v502 = nil, v500 or math.huge ;
+		for v699, v700 in next, ws.WORKSPACE_Entities.Players:GetChildren() do
+			if (v700:IsA("Model") and (v700.Name ~= lp.Name) and v700:FindFirstChild("UpperTorso") and ws.WORKSPACE_Entities.Players:FindFirstChild(lp.Name)) then
+				local v890 = 0 - 0 ;
+				local v891;
+				while true do
+					if (v890 == 0) then
+						v891 = ws.WORKSPACE_Entities.Players[lp.Name];
+						if v891:FindFirstChild("UpperTorso") then
+							local v1294 = (v700.UpperTorso.Position - v891.UpperTorso.Position).Magnitude;
+							if (v1294 <= v502) then
+								local v1407 = 0;
+								while true do
+									if (0 == v1407) then
+										v501 = v700.UpperTorso;
+										v502 = v1294;
+										break;
+									end
+								end
+							end
+						end
+						break;
+					end
+				end
+			end
+		end
+		return v501;
+	end
+	function GetClosestResource(v503, v504)
+		local v505 = 0;
+		local v506;
+		local v507;
+		while true do
+			if (v505 == 1) then
+				return v506;
+			end
+			if (v505 == 0) then
+				v506, v507 = nil, v504 or math.huge ;
+				for v1031, v1032 in next, ws.WORKSPACE_Interactables.Mining.OreDeposits:GetDescendants() do
+					if (string.find(v1032.Name, "Ore") and v1032.Parent:FindFirstChild("DepositInfo") and v1032.Parent.DepositInfo:FindFirstChild("OreRemaining") and (v1032.Parent.DepositInfo.OreRemaining.Value ~= (1696 - (561 + 1135))) and  not v1032:IsA("RayValue")) then
+						local v1193 = 0;
+						local v1194;
+						while true do
+							if (v1193 == (0 - 0)) then
+								v1194 = (v1032.Position - v503.HumanoidRootPart.Position).Magnitude;
+								if (v1194 <= v507) then
+									v506 = v1032;
+									v507 = v1194;
+								end
+								break;
+							end
+						end
+					end
+				end
+				v505 = 3 - 2 ;
+			end
+		end
+	end
+	function Equip(v508)
+		for v701, v702 in next, Modules.plrData:GetContainer("Inventory").Items do
+			if (v702.Type and string.find(v702.Type:lower(), v508 or "" )) then
+				Modules.plrCharacter:_DirectEquipItem(v702);
+			end
+		end
+	end
+	function GetPickaxe(v509)
+		local v510 = 1066 - (507 + 559) ;
+		while true do
+			if (v510 == (2 - 1)) then
+				return false;
+			end
+			if (v510 == (0 - 0)) then
+				if  not v509 then
+					return false;
+				end
+				for v1033, v1034 in next, v509:GetChildren() do
+					if (v1034:IsA("Model") and  not string.match(v1034.Name:lower(), "loadoutitem") and string.match(v1034.Name:lower(), "pickaxe")) then
+						return v1034;
+					end
+				end
+				v510 = 389 - (212 + 176) ;
+			end
+		end
+	end
+	function wwguard(v511, v512)
+		return function(...)
+			local v703 = 0;
+			local v704;
+			while true do
+				if (v703 == 1) then
+					return v512(...);
+				end
+				if (v703 == 0) then
+					v704 = getconstants(2);
+					if table.find(v704, "StackSize") then
+						return v511(...);
+					end
+					v703 = 906 - (250 + 655) ;
+				end
+			end
+		end;
+	end
+	function GetPositionAtTime(v513, v514, v515, v516)
+		return v513 + (v514 * v515) + (0.5 * v516 * (v515 ^ 2)) ;
+	end
+	function SolveTime(v517, v518, v519, v520)
+		local v521 = 0 - 0 ;
+		local v522;
+		local v523;
+		local v524;
+		local v525;
+		local v526;
+		local v527;
+		local v528;
+		while true do
+			if (v521 == (2 - 0)) then
+				v526 = (v522.Y + ((0.5 - 0) * v520 * v525 * v525)) / v525 ;
+				v527 = v523.Unit;
+				v521 = 3;
+			end
+			if (v521 == (1957 - (1869 + 87))) then
+				v524 = v523.Magnitude;
+				v525 = v524 / v518 ;
+				v521 = 6 - 4 ;
+			end
+			if (v521 == (1901 - (484 + 1417))) then
+				v522 = v519 - v517 ;
+				v523 = Vector3.new(v522.X, 0, v522.Z);
+				v521 = 1;
+			end
+			if (v521 == (8 - 4)) then
+				return v528, v525;
+			end
+			if (v521 == (4 - 1)) then
+				v528 = v527 * v518 ;
+				v528 = Vector3.new(v528.X, v526, v528.Z);
+				v521 = 4;
+			end
+		end
+	end
+	function randomVector(v529, v530, v531)
+		local v532 = 773 - (48 + 725) ;
+		local v533;
+		while true do
+			if (v532 == (0 - 0)) then
+				v533 = CFrame.new(Vector3.new(), v530) * CFrame.Angles(0, 0 - 0 , v529:NextNumber(0, (2 + 0) * math.pi )) * CFrame.Angles(math.acos(v529:NextNumber(math.cos(v531), 2 - 1 )), 0, 0 + 0 ) ;
+				return v533.lookVector;
+			end
+		end
+	end
+	function getSpreadVector(v534, v535, v536)
+		local v537 = 0 + 0 ;
+		local v538;
+		local v539;
+		while true do
+			if (v537 == 0) then
+				v538 = Random.new(v534);
+				v539 = randomVector(v538, v535, v536) - v535 ;
+				v537 = 1;
+			end
+			if (v537 == (854 - (152 + 701))) then
+				return v535 - v539 ;
+			end
+		end
+	end
+	function isPartVisible(v540)
+		local v541 = ws.CurrentCamera.CFrame.p;
+		local v542 = Ray.new(v541, v540.Position - v541 );
+		local v543 = {
+			ws.WORKSPACE_Entities.Players[lp.Name],
+			v540.Parent,
+			ws:FindFirstChild("Ignore")
+		};
+		local v544 = ws:FindPartOnRayWithIgnoreList(v542, v543);
+		if v544 then
+			return false;
+		end
+		return true;
+	end
+	local function v55()
+		local v545 = 0;
+		local v546;
+		while true do
+			if (0 == v545) then
+				v546 = {};
+				for v1035, v1036 in next, workspace:WaitForChild("WORKSPACE_Entities"):WaitForChild("Animals"):GetChildren() do
+					local v1037 = 895 - (557 + 338) ;
+					local v1038;
+					local v1039;
+					while true do
+						if (v1037 == (1 + 0)) then
+							if v1039 then
+								v546[ #v546 + 1 ] = v1036;
+							end
+							break;
+						end
+						if (v1037 == 0) then
+							v1038 = v1036:FindFirstChild("Health");
+							v1039 = v1038 and (v1038.Value > 0) ;
+							v1037 = 1;
+						end
+					end
+				end
+				v545 = 1;
+			end
+			if (v545 == (2 - 1)) then
+				return v546;
+			end
+		end
+	end
+end);
+local v6 = false;
+v4(function()
+	local v56 = 0;
+	local v57;
+	local v58;
+	while true do
+		if ((10 - 7) == v56) then
+			task.spawn(function()
+				repeat
+					task.wait();
+					if (Network and Network.FireServer and (type(Network.FireServer) == "function")) then
+						local v1195 = Network.FireServer;
+						local v1196 = {};
+						local function v1197(v1238)
+							local v1239 = 0 - 0 ;
+							while true do
+								if (v1239 == (0 - 0)) then
+									task.wait(v1238.time);
+									for v1469, v1470 in next, v1238.bullets do
+										local v1471 = Network:GetReference(v1238.target, "CharacterPart");
+										if  not (v1238.player and  not v1471) then
+											local v1561 = 801 - (499 + 302) ;
+											while true do
+												if ((866 - (39 + 827)) == v1561) then
+													v1195(Network, "ProjectileEvent", v1470, mainModule.SyncedTime:GetTime(), "Final", (v1238.npc and {
+														v1238.target.Parent.Parent,
+														v1238.target.Name
+													}) or (v1238.animal and v1238.target) or v1471 , v1238.cframe:PointToObjectSpace(v1238.hitPos), v1238.cframe:VectorToObjectSpace(Vector3.FromNormalId(Enum.NormalId.Front)), v1238.cframe:VectorToObjectSpace(v1238.velocity.unit), v1238.hitPos, Vector3.FromNormalId(Enum.NormalId.Front), v1238.target.Material.Name);
+													task.defer(v1195, Network, "RemoveProjectile", v1470);
+													v1561 = 3 - 2 ;
+												end
+												if (v1561 == (1 - 0)) then
+													v1196[v1470] = nil;
+													break;
+												end
+											end
+										end
+									end
+									break;
+								end
+							end
+						end
+						local function v1198(v1240)
+							if (type(v1240) == "table") then
+								for v1408, v1409 in next, v1240 do
+									v1196[v1409] = true;
+								end
+							end
+						end
+						Network.FireServer = wwguard(v1195, function(v1241, v1242, ...)
+							local v1243 = {
+								...
+							};
+							if ((v1242 == "LowerStamina") and Settings.infStamina) then
+								return;
+							elseif (((v1242 == "DamageSelf") or (v1242 == "TrainSmack")) and Settings.NoSelfDamage) then
+								return;
+							end
+							if (v1242 == "CharUpdate") then
+								if antiTpDebounce then
+									local v1472 = 0;
+									while true do
+										if ((0 + 0) == v1472) then
+											spawn(function()
+												antiTpDebounce = false;
+											end);
+											v1243[5 - 3 ] = "";
+											v1472 = 1;
+										end
+										if ((1 + 0) == v1472) then
+											return v1195(v1241, v1242, unpack(v1243));
+										end
+									end
+								end
+								if Settings.NoAntiTp then
+									local v1473 = 0 - 0 ;
+									while true do
+										if (v1473 == (104 - (103 + 1))) then
+											v1243[556 - (475 + 79) ] = "";
+											return v1195(v1241, v1242, unpack(v1243));
+										end
+									end
+								end
+							end
+							if (v1242 == "InitProjectiles") then
+								local v1347 = Modules.plrCharacter:GetEquippedItem();
+								local v1348 = v1243[2];
+								local v1349 = (type(v1347) == "table") and v1347.SharedData ;
+								local v1350 = false;
+								local v1351 = debug.getstack(3) or {} ;
+								local v1352 = v1351[4 - 2 ];
+								if (type(v1352) ~= "string") then
+									warn("projtype wrong #1", type(v1352));
+								elseif  not v1352:find("Projectile") then
+									warn("projtype wrong #2", v1352);
+								end
+								if Settings.silentAim then
+									local v1474 = GetTarget();
+									warn("silent aim-> target=", v1474);
+									if v1474 then
+										local v1562 = 0 - 0 ;
+										local v1563;
+										local v1564;
+										local v1565;
+										local v1566;
+										local v1567;
+										local v1568;
+										local v1569;
+										while true do
+											if ((1 + 0) == v1562) then
+												if (type(v1349.GravityMultiplier) == "number") then
+													v1564 = v1564 * v1349.GravityMultiplier ;
+												end
+												if ((type(v1348.power) == "number") and (type(v1348.drawStart) == "number")) then
+													local v1734 = 0;
+													local v1735;
+													while true do
+														if ((0 + 0) == v1734) then
+															v1735 = math.min(v1348.power, 1);
+															if (v1348.arrowType == "ExplosiveArrow") then
+																v1563 = math.max(v1349.MaxPower, v1735);
+															else
+																v1563 = math.min(v1349.MinPower, v1735);
+															end
+															break;
+														end
+													end
+												end
+												v1562 = 1505 - (1395 + 108) ;
+											end
+											if (v1562 == (5 - 3)) then
+												v1565 = v1474.CFrame;
+												v1566 = v1474.Position;
+												v1562 = 1207 - (7 + 1197) ;
+											end
+											if (4 == v1562) then
+												if v1568 then
+													local v1736 = 0 + 0 ;
+													local v1737;
+													local v1738;
+													local v1739;
+													local v1740;
+													while true do
+														if (3 == v1736) then
+															if ((type(v1348.power) == "number") and (type(v1348.drawStart) ~= "number")) then
+																v1348.power = 1;
+															end
+															v1350 = true;
+															v1736 = 4;
+														end
+														if (v1736 == 4) then
+															if Settings.backTrack then
+																local v1779 = 0 + 0 ;
+																while true do
+																	if (v1779 == (319 - (27 + 292))) then
+																		if Settings.wallBang then
+																			pass = true;
+																		end
+																		if pass then
+																			local v1784 = 0 - 0 ;
+																			local v1785;
+																			local v1786;
+																			while true do
+																				if (v1784 == (2 - 0)) then
+																					return;
+																				end
+																				if (v1784 == (4 - 3)) then
+																					v1198(v1243[5 - 2 ]);
+																					task.spawn(v1197, {
+																						cframe = v1565,
+																						hitPos = v1786,
+																						player = not  not game.Players:GetPlayerFromCharacter(v1474.Parent),
+																						animal = v1474:IsDescendantOf(ws:WaitForChild("WORKSPACE_Entities"):WaitForChild("Animals")),
+																						npc = v1474:IsDescendantOf(ws:WaitForChild("WORKSPACE_Entities"):WaitForChild("NPCs")),
+																						origin = v1567,
+																						direction = v1737,
+																						speed = v1563,
+																						velocity = v1737 * v1563 ,
+																						time = v1569,
+																						startTime = mainModule.SyncedTime:GetTime(),
+																						target = v1474,
+																						bullets = v1243[5 - 2 ]
+																					});
+																					v1784 = 2;
+																				end
+																				if (v1784 == 0) then
+																					v1785, v1786 = ws:FindPartOnRayWithWhitelist(Ray.new(v1567, v1566 - v1567 ), {
+																						v1474
+																					});
+																					v1195(v1241, v1242, unpack(v1243));
+																					v1784 = 140 - (43 + 96) ;
+																				end
+																			end
+																		end
+																		break;
+																	end
+																end
+															end
+															break;
+														end
+														if (2 == v1736) then
+															v1740 = v1739 * math.clamp((4 - 3) - v1738 , 0 - 0 , 1 + 0 ) ;
+															if (v1352 ~= "TomahawkProjectile") then
+																local v1780 = 0 + 0 ;
+																while true do
+																	if (v1780 == 0) then
+																		v1348.direction = getSpreadVector(v1348.seed, v1737, v1740);
+																		v1348.accuracy = 1 - 0 ;
+																		break;
+																	end
+																end
+															else
+																v1348.direction = v1737;
+															end
+															v1736 = 2 + 1 ;
+														end
+														if (v1736 == 1) then
+															if (v1348.ammoType == "ShotgunRound") then
+																v1738 = v1738 * (v1349.ShotgunRoundAccuracy or (1 - 0)) ;
+															end
+															v1739 = (((v1349.NumProjectiles or 1) > (1 + 0)) and math.rad(1 + 9 )) or math.rad(1763.5 - (1414 + 337) ) ;
+															v1736 = 2;
+														end
+														if (v1736 == (1940 - (1642 + 298))) then
+															v1737 = v1568.Unit;
+															v1738 = v1349.ProjectileAccuracy or 1 ;
+															v1736 = 2 - 1 ;
+														end
+													end
+												end
+												break;
+											end
+											if (v1562 == (8 - 5)) then
+												v1567 = v1348.origin;
+												v1568, v1569 = SolveTime(v1567, v1563, v1566, math.abs(v1564.Y));
+												v1562 = 11 - 7 ;
+											end
+											if (v1562 == (0 + 0)) then
+												v1563 = ((v1352 == "TomahawkProjectile") and 200) or v1349.ProjectilePower ;
+												v1564 = ((v1352 == "TomahawkProjectile") and Vector3.new(0, -(117 + 33), 0)) or v1349.Gravity or Vector3.new(972 - (357 + 615) , -32, 0 + 0 ) ;
+												v1562 = 2 - 1 ;
+											end
+										end
+									end
+								end
+								if ( not v1350 and Settings.noSpread and (type(v1347) == "table") and (type(v1349) == "table") and (type(v1348) == "table") and (v1352 ~= "TomahawkProjectile")) then
+									local v1475 = v1349.ProjectileAccuracy or (1 + 0) ;
+									if (v1348.ammoType == "ShotgunRound") then
+										v1475 = v1475 * (v1349.ShotgunRoundAccuracy or (2 - 1)) ;
+									end
+									local v1476 = (((v1349.NumProjectiles or (1 + 0)) > (1 + 0)) and math.rad(10)) or math.rad(8.5 + 4 ) ;
+									local v1477 = v1476 * math.clamp((1302 - (384 + 917)) - v1475 , 697 - (128 + 569) , 1544 - (1407 + 136) ) ;
+									v1348.accuracy = 1888 - (687 + 1200) ;
+									v1348.direction = getSpreadVector(v1348.seed, v1348.direction, v1477);
+								end
+							elseif ((v1242 == "ProjectileEvent") or (v1242 == "RemoveProjectile")) then
+								local v1480 = 0;
+								while true do
+									if (v1480 == (1710 - (556 + 1154))) then
+										if v1196[v1243[1]] then
+											return;
+										end
+										if ((v1243[3] == "Final") and (v1243[14 - 10 ] == nil)) then
+											return;
+										end
+										break;
+									end
+								end
+							end
+							return v1195(v1241, v1242, unpack(v1243));
+						end);
+					end
+				until Network and Network.FireServer
+			end);
+			break;
+		end
+		if (v56 == (96 - (9 + 86))) then
+			v57 = hookfunction(httpserv.JSONEncode, function(v894, v895)
+				local v896 = 421 - (275 + 146) ;
+				while true do
+					if (v896 == (0 + 0)) then
+						if ((type(v895) == "table") and table.find(getconstants(3), "StackSize") and  not rawget(v895, "SESSION")) then
+							local v1295 = 64 - (29 + 35) ;
+							while true do
+								if (v1295 == (0 - 0)) then
+									if rawget(v895, "Client-IP-Address") then
+										lp:Kick("Stopped anticheat #1");
+										table.foreach(v895, warn);
+										return wait(8999999488);
+									end
+									if  not rawget(v895, "Nonce") then
+										local v1570 = 0 - 0 ;
+										while true do
+											if (1 == v1570) then
+												return wait(8966018002 -  -33981486 );
+											end
+											if (v1570 == 0) then
+												lp:Kick("Stopped anticheat #2");
+												table.foreach(v895, warn);
+												v1570 = 1 + 0 ;
+											end
+										end
+									end
+									break;
+								end
+							end
+						end
+						return v57(v894, v895);
+					end
+				end
+			end);
+			v57 = nil;
+			v56 = 1014 - (53 + 959) ;
+		end
+		if (v56 == (410 - (312 + 96))) then
+			v57 = hookfunction(math.random, function(...)
+				local v897 = 0;
+				local v898;
+				local v899;
+				while true do
+					if (v897 == 0) then
+						v898, v899 = ...;
+						if ((type(v898) == "number") and (type(v899) == "number") and table.find(getconstants(4 - 1 ), "StackSize")) then
+							if ((v898 == (285 - (147 + 138))) and (v899 == 127)) then
+								local v1411 = 899 - (813 + 86) ;
+								local v1412;
+								local v1413;
+								while true do
+									if ((0 + 0) == v1411) then
+										warn("random called");
+										v1412 = false;
+										v1411 = 1;
+									end
+									if (1 == v1411) then
+										v1413 = nil;
+										v1413 = hookfunction(bit32.bxor, newcclosure(function(...)
+											v1412 = true;
+											hookfunction(bit32.bxor, v1413);
+											local v1623 = ...;
+											if (v1623 ~= (15725196 - 7237773)) then
+												local v1696 = 0;
+												while true do
+													if (v1696 == 0) then
+														lp:Kick("Stopped anticheat #3");
+														return task.wait(8999999980 - (18 + 474) );
+													end
+												end
+											end
+											return v1413(...);
+										end));
+										break;
+									end
+								end
+							end
+						end
+						v897 = 1;
+					end
+					if (v897 == (1 + 0)) then
+						return v57(...);
+					end
+				end
+			end);
+			v58 = {
+				LowerStamina = true,
+				DamageSelf = true,
+				ClientNotification = true,
+				CharacterReplicate = true,
+				ClientEvent = true
+			};
+			v56 = 9 - 6 ;
+		end
+		if (v56 == (1086 - (860 + 226))) then
+			httpserv = v0(game:GetService("HttpService"));
+			v57 = nil;
+			v56 = 304 - (121 + 182) ;
+		end
+	end
+end);
+identifyexecutor = identifyexecutor or function()
+	return false;
+end ;
+local v7 = "Executed The Script: "   .. "\n"   .. "https://www.roblox.com/users/"   .. lp.UserId   .. "/profile" ;
+local v8 = "Executor Used: "   .. (identifyexecutor() or "Failed to get executor name") ;
+SendReport(v7   .. "\n"   .. v8 );
+togglelib = "Delete";
+lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/olympokram/new/refs/heads/main/DefinitiveUI.lua"))();
+local v9 = lib:Window(" ", " ", " ", Color3.fromRGB(0, 255, 24 + 170 ), Enum.KeyCode[togglelib]);
+libsky = loadstring(game:HttpGet("https://raw.githubusercontent.com/BigHacker123/skybox/main/.lua", true))();
+ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/MorryNgo/ESP-Library/refs/heads/main/Kiriot%20ESP%20Lib.lua"))();
+local v11 = v9:Tab("Main");
+local v13 = v9:Tab("Client");
+local v15 = v9:Tab("Settings");
+lib.AnimateText = true
+MobileExtra(v11, "silentAim", "Enable Silent Aim", false, function(v74)
+	Settings.silentAim = v74;
+end);
+v11:MakeDropdown("saimmode", {
+	Values = {
+		"FOV",
+		"Closest"
+	},
+	Multi = false,
+	Text = "Aim Mode",
+	Default = "FOV",
+	Callback = function(v76)
+		Settings.silentmode = v76;
+	end
+});
+v11:NewSlider("sdistlimit", {
+	Text = "Distance Limit",
+	Min = 500,
+	Max = 10141 - 5141 ,
+	Precise = false,
+	Default = 2291 - 1291 ,
+	Callback = function(v78)
+		Settings.sdist = v78;
+	end
+});
+v11:MakeDropdown("spriority", {
+	Values = {
+		"NPCs",
+		"Players",
+		"Entities"
+	},
+	Multi = true,
+	Text = "Target Priority",
+	Default = "Players",
+	Callback = function(v80)
+		Settings.spriority = v80;
+	end
+});
+v11:MakeToggle("projtp", {
+	Text = "Projectile TP",
+	Default = false,
+	Callback = function(v109)
+		Settings.backTrack = v109;
+	end
+});
+v11:MakeToggle("wallBang", {
+	Text = "Wall Bang",
+	Default = false,
+	Callback = function(v111)
+		Settings.wallBang = v111;
+		if Settings.wallBang then
+			repeat
+				local v744 = 1732 - (64 + 1668) ;
+				while true do
+					if (v744 == 0) then
+						task.wait();
+						if (Modules and Modules.projHandler) then
+							if repst:FindFirstChild("ProjectileHandler", true) then
+								local v1363 = 1973 - (1227 + 746) ;
+								local v1364;
+								local v1365;
+								while true do
+									if (v1363 == (2 - 1)) then
+										v1364.Raycast = function(...)
+											local v1579 = 0;
+											local v1580;
+											while true do
+												if ((0 - 0) == v1579) then
+													v1580 = {
+														...
+													};
+													if ((type(v1580[495 - (415 + 79) ]) == "table") and v1580[1].IsOwner) then
+														if ((type(v1580[1 + 3 ]) == "table") and Settings.wallBang) then
+															local v1761 = 491 - (142 + 349) ;
+															while true do
+																if (v1761 == 0) then
+																	table.insert(v1580[4], ws.Terrain);
+																	table.insert(v1580[4], ws:FindFirstChild("WORKSPACE_Geometry"));
+																	v1761 = 1 + 0 ;
+																end
+																if (v1761 == (1 - 0)) then
+																	table.insert(v1580[2 + 2 ], ws:FindFirstChild("WORKSPACE_Interactables"));
+																	table.insert(v1580[3 + 1 ], ws:FindFirstChild("Ignore"));
+																	break;
+																end
+															end
+														end
+													end
+													v1579 = 2 - 1 ;
+												end
+												if (v1579 == (1865 - (1710 + 154))) then
+													return v1365(unpack(v1580));
+												end
+											end
+										end;
+										break;
+									end
+									if (v1363 == (318 - (200 + 118))) then
+										v1364 = getsenv(repst.SharedModules.World.ProjectileHandler);
+										v1365 = v1364.Raycast;
+										v1363 = 1;
+									end
+								end
+							else
+								local v1366 = 0 + 0 ;
+								while true do
+									if (v1366 == (0 - 0)) then
+										Library:Notify("Script Warning: Projectile Handler Module Doesn't Exist", 5, nil);
+										Toggles['wallBang']:SetValue(false);
+										break;
+									end
+								end
+							end
+						end
+						break;
+					end
+				end
+			until Modules and Modules.projHandler
+		end
+	end
+});
+v11:MakeToggle("nospread", {
+	Text = "No Spread",
+	Default = false,
+	Callback = function(v113)
+		Settings.noSpread = v113;
+	end
+});
+v11:MakeToggle("norecoil", {
+	Text = "No Recoil",
+	Default = false,
+	Callback = function(v115)
+		local v116 = 0 - 0 ;
+		while true do
+			if (v116 == (0 + 0)) then
+				Settings.NoRecoil = v115;
+				if Settings.NoRecoil then
+					repeat
+						local v1113 = 0;
+						while true do
+							if (v1113 == (0 + 0)) then
+								task.wait();
+								if (Modules and Modules.cam) then
+									local v1415 = Modules.cam;
+									for v1494, v1495 in pairs({
+										"AddRecoil",
+										"Vibrate"
+									}) do
+										local v1496 = 0 - 0 ;
+										local v1497;
+										while true do
+											if (v1496 == (1250 - (363 + 887))) then
+												v1497 = v1415[v1495];
+												v1415[v1495] = wwguard(v1497, function(...)
+													local v1678 = 0 - 0 ;
+													while true do
+														if (v1678 == (0 - 0)) then
+															if Settings.NoRecoil then
+																return;
+															end
+															return v1497(...);
+														end
+													end
+												end);
+												break;
+											end
+										end
+									end
+								end
+								break;
+							end
+						end
+					until Modules and Modules.cam
+				end
+				break;
+			end
+		end
+	end
+});
+v11:MakeToggle("noshootcd", {
+	Text = "No Shoot Cooldown",
+	Default = false,
+	Callback = function(v117)
+		local v118 = 0 + 0 ;
+		while true do
+			if ((0 - 0) == v118) then
+				Settings.noshootcd = v117;
+				if Settings.noshootcd then
+					repeat
+						local v1114 = 0;
+						while true do
+							if (v1114 == (0 + 0)) then
+								task.wait();
+								if (Modules and Modules.gunitem) then
+									local v1416 = 1664 - (674 + 990) ;
+									local v1417;
+									while true do
+										if (v1416 == (0 + 0)) then
+											v1417 = Modules.gunitem.CanShoot;
+											Modules.gunitem.CanShoot = function(...)
+												if (Settings.noshootcd and  not Toggles['quickreload'].Value) then
+													return true;
+												end
+												return v1417(...);
+											end;
+											break;
+										end
+									end
+								end
+								break;
+							end
+						end
+					until Modules and Modules.gunitem
+				end
+				break;
+			end
+		end
+	end
+});
+v4(function()
+	local v119, v120, v121 = false, false, false;
+	local v122 = {
+		"LoadStart",
+		"Load",
+		"LoadEnd"
+	};
+	local v123 = {
+		"Aim",
+		"Draw",
+		"Drawn",
+		"Knock"
+	};
+	local v124, v125 = nil, nil;
+	local v126 = 1818 - (821 + 997) ;
+	v11:MakeToggle("quickreload", {
+		Text = "Quick Reload",
+		Default = false,
+		Callback = function(v571)
+			Settings.quickReload = v571;
+			if Settings.quickReload then
+				repeat
+					task.wait();
+					if (Modules and Modules.plrCharacter) then
+						local v1115 = Modules.plrCharacter:GetEquippedItem();
+						if (v1115 and v1115.Character and v1115.IsEquipped and v1115.IsGunItem) then
+							if (v1115.Character and CheckTarget(v1115)) then
+								local v1367 = 255 - (195 + 60) ;
+								local v1368;
+								local v1369;
+								while true do
+									if ((1 + 0) == v1367) then
+										function v1369(v1582, v1583, ...)
+											local v1584 = 0;
+											local v1585;
+											while true do
+												if (v1584 == 1) then
+													if Settings.nobowcharge then
+														if (table.find(v123, v1583) and (type(v1585[ #v1585]) == "number")) then
+															v1585[ #v1585] = v1585[ #v1585] * 100 ;
+														end
+													end
+													return v1368(v1582, v1583, unpack(v1585));
+												end
+												if (v1584 == (1501 - (251 + 1250))) then
+													v1585 = {
+														...
+													};
+													if Settings.quickReload then
+														if (table.find(v122, v1583) and (type(v1585[ #v1585]) == "number")) then
+															v1585[ #v1585] = v1585[ #v1585] * 10 ;
+														elseif (v1583 == "LoadStart") then
+															local v1775 = 0 + 0 ;
+															while true do
+																if (v1775 == (1032 - (809 + 223))) then
+																	v1368(v1582, v1583, unpack(v1585));
+																	task.spawn(function()
+																		v1582:StopTrack(v1583, 0.05);
+																	end);
+																	break;
+																end
+															end
+														end
+													end
+													v1584 = 1 - 0 ;
+												end
+											end
+										end
+										if  not v120 then
+											local v1631 = 0 - 0 ;
+											while true do
+												if (v1631 == 0) then
+													v1115.PlayTrack = v1369;
+													v124 = tostring(v1115.Model);
+													v1631 = 1;
+												end
+												if (v1631 == (3 - 2)) then
+													v120 = true;
+													break;
+												end
+											end
+										end
+										v1367 = 2 + 0 ;
+									end
+									if (v1367 == 2) then
+										if ( not v119 and v124 and (v124 ~= tostring(v1115.Model))) then
+											local v1632 = 0;
+											while true do
+												if (v1632 == (1 + 0)) then
+													v119 = true;
+													break;
+												end
+												if (v1632 == 0) then
+													v1115.PlayTrack = v1369;
+													v125 = tostring(v1115.Model);
+													v1632 = 618 - (14 + 603) ;
+												end
+											end
+										end
+										if (v125 and (v125 ~= tostring(v1115.Model)) and  not v121) then
+											local v1633 = 129 - (118 + 11) ;
+											while true do
+												if (v1633 == (0 + 0)) then
+													v121 = true;
+													v1115.PlayTrack = v1369;
+													break;
+												end
+											end
+										end
+										break;
+									end
+									if (v1367 == (0 + 0)) then
+										v1368 = v1115.PlayTrack;
+										v1369 = nil;
+										v1367 = 1;
+									end
+								end
+							end
+						end
+					end
+				until (v119 and v120 and v121 and Modules and Modules.plrCharacter) or  not Settings.quickReload
+			end
+		end
+	});
+	v11:MakeToggle("nobowcharge", {
+		Text = "No Bow Charge",
+		Default = false,
+		Callback = function(v573)
+			Settings.nobowcharge = v573;
+		end
+	});
+end);
+v13:MakeToggle("infStamina", {
+	Text = "Infinite Stamina",
+	Default = false,
+	Callback = function(v159)
+		local v160 = 0 - 0 ;
+		while true do
+			if (0 == v160) then
+				Settings.infStamina = v159;
+				if Settings.infStamina then
+					repeat
+						local v1128 = 1761 - (440 + 1321) ;
+						while true do
+							if (0 == v1128) then
+								task.wait();
+								if (Modules and Modules.repState) then
+									local v1428 = Modules.repState;
+									local v1429 = v1428.State.Stamina;
+									setmetatable(v1428.State, {
+										__index = function(v1498, v1499)
+											local v1500 = 1829 - (1059 + 770) ;
+											while true do
+												if (v1500 == (0 - 0)) then
+													if (v1499 == "Stamina") then
+														return (Settings.infStamina and 100) or v1429 ;
+													end
+													return nil;
+												end
+											end
+										end,
+										__newindex = function(v1501, v1502, v1503)
+											local v1504 = 545 - (424 + 121) ;
+											while true do
+												if (v1504 == (0 + 0)) then
+													if (v1502 == "Stamina") then
+														v1429 = v1503;
+														return;
+													end
+													return rawset(v1501, v1502, v1503);
+												end
+											end
+										end
+									});
+									v1428.State.Stamina = nil;
+								end
+								break;
+							end
+						end
+					until Modules and Modules.repState
+				end
+				break;
+			end
+		end
+	end
+});
+v13:MakeToggle("noRadgoll", {
+	Text = "No Radgoll",
+	Default = false,
+	Callback = function(v163)
+		Settings.NoRagdoll = v163;
+		if Settings.NoRagdoll then
+			repeat
+				local v755 = 1347 - (641 + 706) ;
+				while true do
+					if (v755 == 0) then
+						task.wait();
+						if (Modules and Modules.plrCharacter) then
+							local v1246 = Modules.plrCharacter.Ragdoll;
+							Modules.plrCharacter.Ragdoll = wwguard(v1246, function(...)
+								local v1318 = 0 + 0 ;
+								while true do
+									if (v1318 == 0) then
+										if Settings.NoRagdoll then
+											return;
+										end
+										return v1246(...);
+									end
+								end
+							end);
+						end
+						break;
+					end
+				end
+			until Modules and Modules.plrCharacter
+		end
+	end
+});
+v13:MakeToggle("autobreakFree", {
+	Text = "Auto Break Free",
+	Default = false,
+	Callback = function(v171)
+		local v172 = 0;
+		while true do
+			if (v172 == (0 - 0)) then
+				Settings.AutoBreakFree = v171;
+				if Settings.AutoBreakFree then
+					repeat
+						local v1130 = 1123 - (651 + 472) ;
+						while true do
+							if (v1130 == (0 + 0)) then
+								task.wait();
+								if (Modules and Modules.plrCharacter) then
+									local v1432 = 0;
+									local v1433;
+									while true do
+										if (1 == v1432) then
+											Modules.plrCharacter.BreakFreePerc = nil;
+											break;
+										end
+										if (v1432 == (0 + 0)) then
+											v1433 = Modules.plrCharacter.BreakFreePerc;
+											setmetatable(Modules.plrCharacter, {
+												__index = function(v1634, v1635)
+													if (v1635 == "BreakFreePerc") then
+														return v1433;
+													end
+													return nil;
+												end,
+												__newindex = function(v1636, v1637, v1638)
+													local v1639 = 0 - 0 ;
+													while true do
+														if (v1639 == (483 - (397 + 86))) then
+															if (v1637 == "BreakFreePerc") then
+																local v1752 = 876 - (423 + 453) ;
+																while true do
+																	if ((0 + 0) == v1752) then
+																		v1433 = v1638;
+																		if (Settings.AutoBreakFree and (v1638 > (0 + 0))) then
+																			v1433 = 1 + 0 ;
+																		end
+																		v1752 = 1 + 0 ;
+																	end
+																	if (v1752 == (1 + 0)) then
+																		return;
+																	end
+																end
+															end
+															return rawset(v1636, v1637, v1638);
+														end
+													end
+												end
+											});
+											v1432 = 1;
+										end
+									end
+								end
+								break;
+							end
+						end
+					until Modules and Modules.plrCharacter
+				end
+				break;
+			end
+		end
+	end
+});
+v13:MakeToggle("AntiIdle", {
+	Text = "Anti Idle & Afk",
+	Default = true,
+	Callback = function(v272)
+		Settings.antiidle = v272;
+		if Settings.antiidle then
+			repeat
+				task.wait();
+			until lp
+			if ( #getconnections(lp.Idled) > 0) then
+				for v1086, v1087 in next, getconnections(lp.Idled) do
+					if v1087['Disable'] then
+						v1087['Disable'](v1087);
+					elseif v1087['Disconnect'] then
+						v1087['Disconnect'](v1087);
+					end
+				end
+			else
+				local v971 = v0(game:GetService("VirtualUser"));
+				conn['Idled'] = lp.Idled:Connect(function()
+					local v1088 = 0 - 0 ;
+					while true do
+						if (v1088 == (1658 - (256 + 1402))) then
+							v971:CaptureController();
+							v971:ClickButton2(Vector2.new());
+							break;
+						end
+					end
+				end);
+			end
+		elseif conn['Idled'] then
+			local v973 = 1899 - (30 + 1869) ;
+			while true do
+				if (v973 == 0) then
+					conn['Idled']:Disconnect();
+					conn['Idled'] = nil;
+					break;
+				end
+			end
+		end
+	end
+});
+if ((CheckDevice() == "PC") or (CheckDevice() == "Emulator")) then
+	v15:Bind("UI Keybind", {
+		Text = "UI Keybind",
+		Default = togglelib,
+		Callback = function(v731)
+			lib:ChangeBind(Enum.KeyCode[v731]);
+		end
+	});
+end
+v15:Button("Unload UI", function()
+	lib:Unload();
+end);
+local v41 = {
+	Toggle = {
+		Save = function(v290, v291)
+			return {
+				type = "Toggle",
+				idx = v290,
+				value = v291.Value
+			};
+		end,
+		Load = function(v292, v293)
+			if Toggles[v292] then
+				Toggles[v292]:SetValue(v293.value);
+			end
+		end
+	},
+	ColorPicker = {
+		Save = function(v294, v295)
+			return {
+				type = "ColorPicker",
+				idx = v294,
+				value = v295.Value:ToHex(),
+				transparency = v295.Transparency
+			};
+		end,
+		Load = function(v296, v297)
+			if Options[v296] then
+				Options[v296]:SetValueRGB(Color3.fromHex(v297.value), v297.transparency);
+			end
+		end
+	},
+	Dropdown = {
+		Save = function(v298, v299)
+			return {
+				type = "Dropdown",
+				idx = v298,
+				value = v299.Value,
+				mutli = v299.Multi
+			};
+		end,
+		Load = function(v300, v301)
+			if Options[v300] then
+				Options[v300]:SetValue(v301.value);
+			end
+		end
+	}
+};
+task.spawn(function()
+	local v302 = 0 - 0 ;
+	local v303;
+	local v304;
+	local v305;
+	while true do
+		if (v302 == (0 + 0)) then
+			function v303()
+				local v980 = 0 + 0 ;
+				local v981;
+				local v982;
+				local v983;
+				local v984;
+				while true do
+					if (v980 == (1 + 0)) then
+						v983 = '{"idx":"Change Background","type":"Toggle","value":true}';
+						v984 = '{"objects":['   .. v981   .. v982   .. v983   .. "]}" ;
+						v980 = 2 - 0 ;
+					end
+					if (v980 == 0) then
+						v981 = '{"idx":"UI Theme","type":"ColorPicker","transparency":0,"value":"#ffb0b0"},';
+						v982 = '{"idx":"Background List","type":"Dropdown","mutli":false,"value":"Anime"},';
+						v980 = 1 - 0 ;
+					end
+					if (v980 == (4 - 2)) then
+						writefile(v36.Folder   .. "/themes/Hot.json" , v984);
+						break;
+					end
+				end
+			end
+			function v304()
+				local v985 = 86 - (7 + 79) ;
+				local v986;
+				local v987;
+				local v988;
+				local v989;
+				while true do
+					if (v985 == 2) then
+						writefile(v36.Folder   .. "/themes/Tryhard.json" , v989);
+						break;
+					end
+					if (v985 == (0 + 0)) then
+						v986 = '{"idx":"UI Theme","type":"ColorPicker","transparency":0,"value":"ffadad"},';
+						v987 = '{"idx":"Background List","type":"Dropdown","mutli":false,"value":"Tryhard"},';
+						v985 = 182 - (24 + 157) ;
+					end
+					if (v985 == (1 - 0)) then
+						v988 = '{"idx":"Change Background","type":"Toggle","value":true}';
+						v989 = '{"objects":['   .. v986   .. v987   .. v988   .. "]}" ;
+						v985 = 2;
+					end
+				end
+			end
+			v302 = 1;
+		end
+		if (v302 == 2) then
+			v304();
+			v305();
+			break;
+		end
+		if (v302 == (2 - 1)) then
+			function v305()
+				local v990 = 0 + 0 ;
+				local v991;
+				local v992;
+				local v993;
+				local v994;
+				while true do
+					if ((0 - 0) == v990) then
+						v991 = '{"idx":"UI Theme","type":"ColorPicker","transparency":0,"value":"6f08ff"},';
+						v992 = '{"idx":"Background List","type":"Dropdown","mutli":false,"value":"Definitive"},';
+						v990 = 381 - (262 + 118) ;
+					end
+					if (v990 == (1084 - (1038 + 45))) then
+						v993 = '{"idx":"Change Background","type":"Toggle","value":true}';
+						v994 = '{"objects":['   .. v991   .. v992   .. v993   .. "]}" ;
+						v990 = 3 - 1 ;
+					end
+					if (v990 == (232 - (19 + 211))) then
+						writefile(v36.Folder   .. "/themes/Definitive.json" , v994);
+						break;
+					end
+				end
+			end
+			v303();
+			v302 = 2;
+		end
+	end
+end);
+task.spawn(function()
+	local v338 = 0 + 0 ;
+	local v339;
+	while true do
+		if ((1 + 0) == v338) then
+			while task.wait() do
+				v339 += (3 - 2)
+				lib:ChangeBackground(v38.custombackground or "" );
+				if (v339 == (47 - 37)) then
+					break;
+				end
+			end
+			v339 = 0 + 0 ;
+			break;
+		end
+		if (v338 == (0 + 0)) then
+			if isfile(v36.Folder   .. "/themes/autoload.txt" ) then
+				local v1090 = readfile(v36.Folder   .. "/themes/autoload.txt" );
+				if (v1090 ~= "") then
+					v42:SetText("Auto Load Background & Theme Status: "   .. (v1090 or "None") );
+					local v1232 = v36.Folder   .. "/themes/"   .. v1090   .. ".json" ;
+					if isfile(v1232) then
+						local v1340 = 1036 - (562 + 474) ;
+						local v1341;
+						local v1342;
+						local v1343;
+						while true do
+							if (v1340 == (2 - 1)) then
+								if v1342 then
+									for v1651, v1652 in next, v1343.objects do
+										if v41[v1652.type] then
+											v41[v1652.type].Load(v1652.idx, v1652);
+										end
+									end
+								end
+								break;
+							end
+							if (v1340 == 0) then
+								v1341 = v0(game:GetService("HttpService"));
+								v1342, v1343 = pcall(v1341.JSONDecode, v1341, readfile(v1232));
+								v1340 = 1 - 0 ;
+							end
+						end
+					end
+				end
+			end
+			v339 = 905 - (76 + 829) ;
+			v338 = 1674 - (1506 + 167) ;
+		end
+	end
+end);
+local v45 = nil;
+if (isfile and readfile) then
+	local v653 = v36.Folder   .. "/settings/"   .. "autoload"   .. ".txt" ;
+	v45 = (isfile(v653) and tostring(readfile(v653))) or "" ;
+end
+v15:MakeDropdown("Config List", {
+	Values = v36:RefreshConfigList(),
+	Default = v45,
+	Multi = false,
+	Text = "Config List",
+	Callback = function(v340)
+		v38.chooseconfig = v340;
+	end
+});
+v15:MakeTextbox("Config Name", {
+	Text = "Config Name",
+	Callback = function(v342)
+		v38.configname = v342;
+	end
+});
+v15:Button("Create Config", function()
+	local v344 = 0;
+	local v345;
+	local v346;
+	local v347;
+	while true do
+		if (v344 == (0 - 0)) then
+			v345 = v38.configname or "" ;
+			if (v345:gsub(" ", "") == "") then
+				return lib:Notify("Invalid config name (empty)", 268 - (58 + 208) , nil);
+			end
+			v344 = 1 + 0 ;
+		end
+		if (v344 == 1) then
+			v346, v347 = v36:Save(v345);
+			if  not v346 then
+				return lib:Notify("Failed to save config: "   .. v347 , 4 + 1 , nil);
+			end
+			v344 = 2;
+		end
+		if ((2 + 0) == v344) then
+			lib:Notify(string.format("Created config %q", v345), 20 - 15 , nil);
+			Options["Config List"]:SetValues(v36:RefreshConfigList());
+			v344 = 340 - (258 + 79) ;
+		end
+		if (v344 == (1 + 2)) then
+			Options["Config List"]:SetValue(nil);
+			break;
+		end
+	end
+end);
+v15:Button("Load Config", function()
+	local v348 = 0 - 0 ;
+	local v349;
+	local v350;
+	local v351;
+	while true do
+		if (v348 == (1472 - (1219 + 251))) then
+			lib:Notify(string.format("Loaded config %q", v349), 1676 - (1231 + 440) , nil);
+			break;
+		end
+		if (v348 == (58 - (34 + 24))) then
+			v349 = v38.chooseconfig or v38.configname or "" ;
+			if (v349 == "") then
+				return;
+			end
+			v348 = 1;
+		end
+		if (v348 == (1 + 0)) then
+			v350, v351 = v36:Load(v349);
+			if  not v350 then
+				return lib:Notify("Failed to load config: "   .. v351 , 9 - 4 , nil);
+			end
+			v348 = 1 + 1 ;
+		end
+	end
+end);
+v15:Button("Overwrite Config", function()
+	local v352 = v38.chooseconfig or v38.configname or "" ;
+	if (v352 == "") then
+		return;
+	end
+	local v353, v354 = v36:Save(v352);
+	if  not v353 then
+		return lib:Notify("Failed to overwrite config: "   .. v354 , 5, nil);
+	end
+	lib:Notify(string.format("Overwrote config %q", v352), 14 - 9 , nil);
+end);
+v15:Button("Refresh List", function()
+	local v355 = 0 - 0 ;
+	while true do
+		if (v355 == (0 - 0)) then
+			Options["Config List"]:RemoveDropdown();
+			Options["Config List"]:SetValues(v36:RefreshConfigList());
+			v355 = 1;
+		end
+		if ((3 - 2) == v355) then
+			Options["Config List"]:SetValue(nil);
+			break;
+		end
+	end
+end);
+v15:Button("Remove Selected Config", function()
+	local v356 = 0;
+	local v357;
+	local v358;
+	while true do
+		if (v356 == (2 - 1)) then
+			v358 = v36.Folder   .. "/settings/"   .. v357   .. ".json" ;
+			if isfile(v358) then
+				delfile(v358);
+			end
+			v356 = 1591 - (877 + 712) ;
+		end
+		if (3 == v356) then
+			Options["Config List"]:SetValue(nil);
+			Options["UI Theme"]:SetValueRGB(Color3.fromRGB(0 + 0 , 255, 944 - (242 + 512) ));
+			v356 = 4;
+		end
+		if (v356 == 2) then
+			if isfile(v36.Folder   .. "/settings/"   .. "autoload"   .. ".txt" ) then
+				local v1091 = 0 - 0 ;
+				while true do
+					if (v1091 == 0) then
+						delfile(v36.Folder   .. "/settings/"   .. "autoload"   .. ".txt" );
+						v44:SetText("Auto Load Config Status: None");
+						break;
+					end
+				end
+			end
+			Options["Config List"]:SetValues(v36:RefreshConfigList());
+			v356 = 630 - (92 + 535) ;
+		end
+		if (v356 == (0 + 0)) then
+			v357 = v38.chooseconfig or v38.configname or "" ;
+			if (v357 == "") then
+				return;
+			end
+			v356 = 1 - 0 ;
+		end
+		if (v356 == 4) then
+			lib:Notify("Removed Config Success", 1 + 4 , nil);
+			break;
+		end
+	end
+end);
+v15:Button("Remove all Configs", function()
+	local v359 = v36.Folder   .. "/settings" ;
+	for v654, v655 in next, listfiles(v359) do
+		delfile(v655);
+	end
+	if isfile(v36.Folder   .. "/settings/"   .. "autoload"   .. ".txt" ) then
+		local v732 = 0 - 0 ;
+		while true do
+			if (0 == v732) then
+				v44:SetText("Auto Load Config Status: None");
+				delfile(v36.Folder   .. "/settings/"   .. "autoload"   .. ".txt" );
+				break;
+			end
+		end
+	end
+	Options["UI Theme"]:SetValueRGB(Color3.fromRGB(0 + 0 , 177 + 78 , 27 + 163 ));
+	Options["Config List"]:SetValues(v36:RefreshConfigList());
+	Options["Config List"]:SetValue(nil);
+	Options["Config List"]:RemoveDropdown();
+	lib:Notify("Removed all Configs Success", 9 - 4 , nil);
+end);
+v15:Button("Set As Auto Load", function()
+	local v360 = v38.chooseconfig or v38.configname or "" ;
+	if (v360 == "") then
+		return;
+	end
+	writefile(v36.Folder   .. "/settings/autoload.txt" , v360);
+	v44:SetText("Current Auto Loaded Config: "   .. v360 );
+	lib:Notify(string.format("Set %q to auto load", v360), 7 - 2 , nil);
+end);
+task.delay(1786 - (1476 + 309) , function()
+	if isfile(v36.Folder   .. "/settings/autoload.txt" ) then
+		local v733 = readfile(v36.Folder   .. "/settings/autoload.txt" );
+		v44:SetText("Current Auto Loaded Config: "   .. (v733 or "none") );
+	end
+	v36:LoadAutoloadConfig();
+end);
